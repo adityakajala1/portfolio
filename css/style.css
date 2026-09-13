@@ -188,32 +188,21 @@ nav.scrolled {
 
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
+  background: var(--accent-blue);
+  color: var(--white);
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  padding: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background var(--transition-fast);
 }
 
-.menu-toggle span {
-  width: 24px;
-  height: 2px;
+.menu-toggle.active {
   background: var(--text-primary);
-  border-radius: 2px;
-  transition: all var(--transition-fast);
-}
-
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  color: var(--white);
 }
 
 /* ============================================
