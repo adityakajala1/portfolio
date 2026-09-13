@@ -150,7 +150,7 @@ This project is open source and available under the MIT License.
 ## 📧 Contact
 
 **Aditya Kajala**
-- Email: adityakajala@example.com
+- Email: adityakajala@gmail.com
 - LinkedIn: [linkedin.com/in/adityakajala](https://linkedin.com/in/adityakajala)
 - GitHub: [github.com/adityakajala1](https://github.com/adityakajala1)
 
