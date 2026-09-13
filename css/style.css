@@ -645,8 +645,8 @@ footer {
   }
 
   .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
   }
 
   .nav-links li {
