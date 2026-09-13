@@ -133,6 +133,51 @@ footer { background: rgba(255,255,255,0.65) !important; border-top-color: rgba(2
 .dark-theme .hero { background: radial-gradient(circle at 30% 20%, rgba(20,22,35,0.9) 0%, rgba(12,14,22,0.9) 60%, rgba(8,10,16,0.9) 100%) !important; }
 .dark-theme .hero::before, .dark-theme .hero::after { background: rgba(0,113,227,0.15) !important; filter: blur(120px) !important; opacity: 0.4 !important; }
 
+/* ===== BLUE THEME — soft cool-blue glass ===== */
+body.blue-theme,
+.blue-theme body {
+  background: linear-gradient(135deg, #dde5f0 0%, #dce6f5 40%, #c8d9e8 70%, #bcd6e6 100%) !important;
+  background-attachment: fixed !important;
+  color: #1a2332 !important;
+}
+.blue-theme nav,
+.blue-theme .card,
+.blue-theme footer,
+.blue-theme .hero,
+.blue-theme section,
+.blue-theme .form-input,
+.blue-theme .form-textarea,
+.blue-theme .btn-ghost,
+.blue-theme .social-links a,
+.blue-theme .section-tag,
+.blue-theme .menu-toggle,
+.blue-theme .loader,
+.blue-theme .loader-spinner,
+.blue-theme .scroll-indicator,
+.blue-theme .card-icon,
+.blue-theme .nav-links.active {
+  background: rgba(225,232,245,0.65) !important;
+  border-color: rgba(100,140,220,0.35) !important;
+  box-shadow: 0 8px 32px 0 rgba(30,60,120,0.12), inset 0 0 0 1px rgba(255,255,255,0.35) !important;
+}
+.blue-theme nav { background: rgba(215,225,240,0.75) !important; border-bottom-color: rgba(100,140,220,0.35) !important; }
+.blue-theme .card { background: rgba(230,238,248,0.78) !important; border-color: rgba(120,160,210,0.45) !important; }
+.blue-theme .card:hover { background: rgba(240,245,252,0.9) !important; border-color: rgba(80,130,200,0.6) !important; box-shadow: 0 22px 60px rgba(30,60,120,0.18) !important; }
+.blue-theme .card-icon { background: rgba(200,215,240,0.7) !important; border-color: rgba(100,140,220,0.5) !important; }
+.blue-theme .btn-primary { background: rgba(30,100,210,0.88) !important; border-color: rgba(255,255,255,0.3) !important; }
+.blue-theme .btn-secondary { background: rgba(220,230,245,0.7) !important; border-color: rgba(30,100,210,0.45) !important; }
+.blue-theme .btn-ghost { background: rgba(210,220,240,0.6) !important; border-color: rgba(100,140,220,0.45) !important; }
+.blue-theme .section-tag { background: rgba(210,225,245,0.7) !important; border-color: rgba(100,140,220,0.5) !important; }
+.blue-theme .form-input, .blue-theme .form-textarea { background: rgba(225,235,248,0.7) !important; border-color: rgba(100,140,220,0.45) !important; }
+.blue-theme footer { background: rgba(215,225,240,0.65) !important; border-top-color: rgba(100,140,220,0.35) !important; }
+.blue-theme .social-links a { background: rgba(210,225,245,0.6) !important; border-color: rgba(100,140,220,0.35) !important; }
+.blue-theme .hero { background: radial-gradient(circle at 30% 20%, rgba(215,225,240,0.85) 0%, rgba(200,215,235,0.85) 60%, rgba(190,205,225,0.85) 100%) !important; }
+.blue-theme .logo, .blue-theme .nav-links a, .blue-theme .card-title, .blue-theme .section-title, .blue-theme .hero-subtitle, .blue-theme .hero-description, .blue-theme .footer-text, .blue-theme .hero h1, .blue-theme .btn, .blue-theme .section-description { color: #1a2332 !important; }
+.blue-theme .card-description, .blue-theme .section-description, .blue-theme .footer-text, .blue-theme .nav-links a { color: #33455c !important; }
+.blue-theme .nav-links a.active { color: #0a2847 !important; }
+.blue-theme .loader { background: rgba(220,228,240,0.7) !important; }
+.blue-theme .loader-spinner { background: rgba(210,225,240,0.7) !important; border-color: rgba(100,140,220,0.6) !important; }
+
 /* ===== DARK THEME TEXT VISIBILITY ===== */
 .dark-theme .logo,
 .dark-theme .nav-links a,
