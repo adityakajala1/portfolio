@@ -318,8 +318,40 @@ function initFormValidation() {
       isValid = false;
     }
 
-    // If valid, let the form submit naturally to Web3Forms
-    // The form will redirect to the success page automatically
+    // If valid, submit via fetch to Web3Forms
+    if (isValid) {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          form.reset();
+          showSuccessMessage();
+        } else {
+          showError(messageInput, 'Failed to send message. Please try again.');
+        }
+      })
+      .catch(error => {
+        showError(messageInput, 'An error occurred. Please try again later.');
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      });
+    }
   });
 
   // Real-time validation on blur
