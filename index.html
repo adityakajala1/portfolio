@@ -219,3 +219,8 @@
 
 </body>
 </html>
+<script>
+(function(){
+  try{ var t=localStorage.getItem('theme'); if(t&&t!=='light') document.body.classList.add(t+'-theme'); }catch(e){}
+})();
+</script>

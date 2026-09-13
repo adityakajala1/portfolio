@@ -21,6 +21,11 @@
   <link rel="stylesheet" href="./css/glass-theme.css?v=2">
 </head>
 <body>
+<script>
+(function(){
+  try{ var t=localStorage.getItem("theme"); if(t&&t!=="light") document.body.classList.add(t+"-theme"); }catch(e){}
+})();
+</script>
 
   <!-- Loading Animation -->
   <div class="loader">
