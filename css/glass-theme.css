@@ -48,7 +48,8 @@ body:not(.dark-theme) .menu-toggle,
 body:not(.dark-theme) .loader,
 body:not(.dark-theme) .loader-spinner,
 body:not(.dark-theme) .scroll-indicator,
-body:not(.dark-theme) .card-icon {
+body:not(.dark-theme) .card-icon,
+body:not(.dark-theme) .filter-btn {
   background: rgba(255,255,255,0.62) !important;
   border-color: rgba(255,255,255,0.45) !important;
 }
@@ -62,7 +63,8 @@ body:not(.dark-theme) .card-icon {
 .dark-theme .section-tag, .dark-theme .menu-toggle,
 .dark-theme .loader, .dark-theme .loader-spinner,
 .dark-theme .scroll-indicator, .dark-theme .card-icon,
-.dark-theme .nav-links.active {
+.dark-theme .nav-links.active,
+.dark-theme .filter-btn {
   background: rgba(18,18,26,0.65) !important;
   border-color: rgba(255,255,255,0.08) !important;
 }
@@ -155,6 +157,7 @@ body.blue-theme,
 .blue-theme .loader-spinner,
 .blue-theme .scroll-indicator,
 .blue-theme .card-icon,
+.blue-theme .filter-btn,
 .blue-theme .nav-links.active {
   background: rgba(225,232,245,0.65) !important;
   border-color: rgba(100,140,220,0.35) !important;
@@ -199,3 +202,5 @@ body.blue-theme,
   color: #a1a1a6 !important;
 }
 .dark-theme .nav-links a.active { color: #ffffff !important; }
+.dark-theme .filter-btn { color: #e5e5ea !important; }
+.blue-theme .filter-btn { color: #1a2332 !important; }
