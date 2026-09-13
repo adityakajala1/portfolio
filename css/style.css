@@ -557,9 +557,9 @@ footer {
 
 .social-links a:hover {
   background: var(--accent-blue); color: var(--white); transform: translateY(-4px);
-  opacity: 1; }
+  opacity: 1; border-color: var(--accent-blue); }
 .social-links a svg { fill: currentColor; opacity: 1; stroke: none; }
-}
+.social-links a { border: 1.5px solid var(--border-color); }
 
 /* ============================================
    UTILITY CLASSES
