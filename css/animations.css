@@ -521,11 +521,6 @@ nav {
   width: 100%;
 }
 
-/* Mobile menu animation */
-.nav-links {
-  animation: slideInDown 0.3s ease;
-}
-
 /* ============================================
    SCROLL INDICATOR
    ============================================ */
