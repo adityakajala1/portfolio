@@ -1,0 +1,186 @@
+/* ============================================
+   APPLE-STYLE FULL GLASS MORPHISM — GLOBAL OVERLAY
+   ============================================ */
+
+/* Soft gradient backdrop behind all glass (Apple-style) */
+body {
+  background: linear-gradient(135deg, #e8e8f0 0%, #d4dde8 40%, #c8dce8 70%, #dcecf5 100%);
+  background-attachment: fixed;
+  color: #1d1d1f;
+}
+
+/* ===== Glass base tokens ===== */
+.glass,
+nav,
+.card,
+footer,
+.hero,
+section,
+.form-input,
+.form-textarea,
+.btn-primary,
+.btn-secondary,
+.btn-ghost,
+.social-links a,
+.section-tag,
+.menu-toggle,
+.nav-links,
+.nav-links.active,
+.loader,
+.loader-spinner,
+.scroll-indicator,
+.card-icon,
+.card:hover,
+.nav-links a:hover,
+.nav-links a.active,
+.hero-cta a:hover {
+  backdrop-filter: saturate(160%) blur(24px) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(24px) !important;
+  background: rgba(255,255,255,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12), inset 0 0 0 1px rgba(255,255,255,0.2) !important;
+}
+
+/* Nav glass (slightly stronger) */
+nav {
+  background: rgba(255,255,255,0.65) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.4) !important;
+}
+
+/* Hero: glass card feel on gradient */
+.hero {
+  background: radial-gradient(circle at 30% 20%, rgba(240,245,255,0.85) 0%, rgba(232,238,245,0.85) 60%, rgba(220,228,238,0.85) 100%) !important;
+  backdrop-filter: blur(40px) saturate(200%) !important;
+  backdrop-filter: blur(30px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(200%) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+}
+
+/* Cards stronger glass */
+.card {
+  background: rgba(255,255,255,0.72) !important;
+  border: 1px solid rgba(255,255,255,0.45) !important;
+  box-shadow: 0 12px 40px rgba(31,38,135,0.10), inset 0 0 0 1px rgba(255,255,255,0.25) !important;
+}
+.card:hover {
+  background: rgba(255,255,255,0.85) !important;
+  box-shadow: 0 20px 60px rgba(31,38,135,0.15), inset 0 0 0 1px rgba(255,255,255,0.35) !important;
+  border-color: rgba(255,255,255,0.6) !important;
+  transform: translateY(-10px) scale(1.01);
+}
+
+/* Card icon glass dot */
+.card-icon {
+  background: rgba(255,255,255,0.65) !important;
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  box-shadow: 0 4px 12px rgba(0,113,227,0.15) !important;
+}
+
+/* Section tags glass pill */
+.section-tag {
+  background: rgba(255,255,255,0.7) !important;
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* Forms glass fields */
+.form-input,
+.form-textarea {
+  background: rgba(255,255,255,0.7) !important;
+  border: 1.5px solid rgba(255,255,255,0.45) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.form-input:focus,
+.form-textarea:focus {
+  background: rgba(255,255,255,0.9) !important;
+  border-color: rgba(0,113,227,0.4) !important;
+  box-shadow: 0 0 0 4px rgba(0,113,227,0.12), 0 4px 20px rgba(31,38,135,0.08) !important;
+}
+
+/* Buttons glass */
+.btn-primary {
+  background: rgba(0,113,227,0.85) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 20px rgba(0,113,227,0.25) !important;
+}
+.btn-primary:hover {
+  background: rgba(0,113,227,0.95) !important;
+  box-shadow: 0 8px 30px rgba(0,113,227,0.35) !important;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.6) !important;
+  border: 1.5px solid rgba(0,113,227,0.35) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.85) !important;
+  border-color: rgba(0,113,227,0.5) !important;
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.55) !important;
+  border: 1.5px solid rgba(255,255,255,0.45) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.8) !important;
+  border-color: rgba(255,255,255,0.7) !important;
+}
+
+/* Footer glass */
+footer {
+  background: rgba(255,255,255,0.65) !important;
+  border-top: 1px solid rgba(255,255,255,0.5) !important;
+}
+
+/* Social links glass */
+.social-links a {
+  background: rgba(255,255,255,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.social-links a:hover {
+  background: rgba(0,113,227,0.85) !important;
+  border-color: rgba(255,255,255,0.4) !important;
+}
+
+/* Mobile dropdown stronger glass */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-links.active {
+    background: rgba(255,255,255,0.82) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(28px) saturate(180%) !important;
+  }
+  .nav-links li {
+    border-bottom: 1px solid rgba(255,255,255,0.25) !important;
+  }
+  .menu-toggle {
+    background: rgba(0,113,227,0.85) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 16px rgba(0,113,227,0.25) !important;
+  }
+}
+
+/* Loader glass */
+.loader {
+  background: rgba(232,232,240,0.7) !important;
+  backdrop-filter: blur(40px) !important;
+}
+.loader-spinner {
+  background: rgba(255,255,255,0.7) !important;
+  border-color: rgba(255,255,255,0.6) !important;
+}
+
+/* Scroll indicator glass pill */
+.scroll-indicator {
+  border: 2px solid rgba(255,255,255,0.6) !important;
+  background: rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(8px) !important;
+}
+.scroll-indicator::before {
+  background: rgba(0,113,227,0.85) !important;
+  box-shadow: 0 0 8px rgba(0,113,227,0.4) !important;
+}
