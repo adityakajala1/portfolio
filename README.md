@@ -151,7 +151,7 @@ This project is open source and available under the MIT License.
 
 **Aditya Kajala**
 - Email: adityakajala@gmail.com
-- LinkedIn: [linkedin.com/in/adityakajala](https://linkedin.com/in/adityakajala)
+- LinkedIn: [linkedin.com/in/adityakajala]https://www.linkedin.com/in/aditya-kajala-375b9b389?utm_source=share_via&utm_content=profile&utm_medium=member_android
 - GitHub: [github.com/adityakajala1](https://github.com/adityakajala1)
 
 ---
