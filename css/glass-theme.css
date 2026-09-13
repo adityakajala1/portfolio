@@ -164,7 +164,80 @@ footer {
   }
 }
 
-/* Loader glass */
+/* ===== Dark-theme glass adjustments ===== */
+body.dark-theme,
+.dark-theme body {
+  background: linear-gradient(135deg, #0a0a10 0%, #13131a 40%, #181825 70%, #0f0f14 100%) !important;
+  background-attachment: fixed !important;
+  color: #f5f5f7 !important;
+}
+
+.dark-theme nav,
+.dark-theme .nav-links.active,
+.dark-theme .card,
+.dark-theme footer,
+.dark-theme .hero,
+.dark-theme section,
+.dark-theme .form-input,
+.dark-theme .form-textarea,
+.dark-theme .btn-ghost,
+.dark-theme .social-links a,
+.dark-theme .section-tag,
+.dark-theme .menu-toggle,
+.dark-theme .loader,
+.dark-theme .loader-spinner,
+.dark-theme .scroll-indicator,
+.dark-theme .card-icon {
+  background: rgba(20,20,28,0.72) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.06) !important;
+}
+.dark-theme nav {
+  background: rgba(20,20,28,0.85) !important;
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+.dark-theme .card:hover {
+  background: rgba(30,30,40,0.85) !important;
+  border-color: rgba(255,255,255,0.18) !important;
+}
+.dark-theme .btn-primary {
+  background: rgba(0,113,227,0.9) !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+.dark-theme .btn-secondary {
+  background: rgba(30,30,40,0.75) !important;
+  border-color: rgba(0,113,227,0.5) !important;
+}
+.dark-theme body {
+  color: #f5f5f7 !important;
+}
+.dark-theme .logo,
+.dark-theme .nav-links a,
+.dark-theme .card-title,
+.dark-theme .section-title,
+.dark-theme .hero-subtitle,
+.dark-theme .hero-description,
+.dark-theme .footer-text,
+.dark-theme .hero h1,
+.dark-theme .btn,
+.dark-theme .section-description {
+  color: #f5f5f7 !important;
+}
+.dark-theme .card-description,
+.dark-theme .nav-links a,
+.dark-theme .section-description,
+.dark-theme .footer-text {
+  color: #a1a1a6 !important;
+}
+.dark-theme .nav-links a.active {
+  color: #ffffff !important;
+}
+.dark-theme .hero::before,
+.dark-theme .hero::after {
+  background: rgba(0,113,227,0.15) !important;
+  filter: blur(120px) !important;
+  opacity: 0.4 !important;
+}
 .loader {
   background: rgba(232,232,240,0.7) !important;
   backdrop-filter: blur(40px) !important;
