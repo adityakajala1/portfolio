@@ -175,26 +175,64 @@ body.blue-theme,
 .blue-theme footer { background: rgba(215,225,240,0.65) !important; border-top-color: rgba(100,140,220,0.35) !important; }
 .blue-theme .social-links a { background: rgba(210,225,245,0.6) !important; border-color: rgba(100,140,220,0.35) !important; }
 .blue-theme .hero { background: radial-gradient(circle at 30% 20%, rgba(215,225,240,0.85) 0%, rgba(200,215,235,0.85) 60%, rgba(190,205,225,0.85) 100%) !important; }
-.blue-theme .logo, .blue-theme .nav-links a, .blue-theme .card-title, .blue-theme .section-title, .blue-theme .hero-subtitle, .blue-theme .hero-description, .blue-theme .footer-text, .blue-theme .hero h1, .blue-theme .btn, .blue-theme .section-description { color: #1a2332 !important; }
+.blue-theme .logo, .blue-theme .nav-links a, .blue-theme .card-title, .blue-theme .section-title, .blue-theme h2, .blue-theme .hero-subtitle, .blue-theme .hero-description, .blue-theme .footer-text, .blue-theme .hero h1, .blue-theme .btn-secondary, .blue-theme .btn-ghost, .blue-theme .section-description, .blue-theme .form-label, .blue-theme .form-input, .blue-theme .form-textarea, .blue-theme .social-links a { color: #1a2332 !important; }
+.blue-theme .btn-primary { color: #ffffff !important; }
 .blue-theme .card-description, .blue-theme .section-description, .blue-theme .footer-text, .blue-theme .nav-links a { color: #33455c !important; }
 .blue-theme .nav-links a.active { color: #0a2847 !important; }
 .blue-theme .loader { background: rgba(220,228,240,0.7) !important; }
 .blue-theme .loader-spinner { background: rgba(210,225,240,0.7) !important; border-color: rgba(100,140,220,0.6) !important; }
+.blue-theme .filter-btn { color: #1a2332 !important; }
+
+/* ===== LIGHT THEME TEXT VISIBILITY ===== */
+body:not(.dark-theme):not(.blue-theme) .logo,
+body:not(.dark-theme):not(.blue-theme) .nav-links a,
+body:not(.dark-theme):not(.blue-theme) .card-title,
+body:not(.dark-theme):not(.blue-theme) .section-title,
+body:not(.dark-theme):not(.blue-theme) h2,
+body:not(.dark-theme):not(.blue-theme) .hero-subtitle,
+body:not(.dark-theme):not(.blue-theme) .hero-description,
+body:not(.dark-theme):not(.blue-theme) .footer-text,
+body:not(.dark-theme):not(.blue-theme) .hero h1,
+body:not(.dark-theme):not(.blue-theme) .btn-secondary,
+body:not(.dark-theme):not(.blue-theme) .btn-ghost,
+body:not(.dark-theme):not(.blue-theme) .section-description,
+body:not(.dark-theme):not(.blue-theme) .form-label,
+body:not(.dark-theme):not(.blue-theme) .form-input,
+body:not(.dark-theme):not(.blue-theme) .form-textarea,
+body:not(.dark-theme):not(.blue-theme) .social-links a,
+body:not(.dark-theme):not(.blue-theme) .filter-btn {
+  color: #1d1d1f !important;
+}
+body:not(.dark-theme):not(.blue-theme) .btn-primary { color: #ffffff !important; }
+body:not(.dark-theme):not(.blue-theme) .card-description,
+body:not(.dark-theme):not(.blue-theme) .section-description,
+body:not(.dark-theme):not(.blue-theme) .footer-text,
+body:not(.dark-theme):not(.blue-theme) .nav-links a {
+  color: #4b5563 !important;
+}
+body:not(.dark-theme):not(.blue-theme) .nav-links a.active { color: #000000 !important; }
 
 /* ===== DARK THEME TEXT VISIBILITY ===== */
 .dark-theme .logo,
 .dark-theme .nav-links a,
 .dark-theme .card-title,
 .dark-theme .section-title,
+.dark-theme h2,
 .dark-theme .hero-subtitle,
 .dark-theme .hero-description,
 .dark-theme .footer-text,
 .dark-theme .hero h1,
-.dark-theme .btn,
+.dark-theme .btn-secondary,
+.dark-theme .btn-ghost,
 .dark-theme .section-description,
+.dark-theme .form-label,
+.dark-theme .form-input,
+.dark-theme .form-textarea,
+.dark-theme .social-links a,
 .dark-theme .nav-links a.active {
   color: #f5f5f7 !important;
 }
+.dark-theme .btn-primary { color: #ffffff !important; }
 .dark-theme .card-description,
 .dark-theme .section-description,
 .dark-theme .footer-text,
@@ -203,4 +241,3 @@ body.blue-theme,
 }
 .dark-theme .nav-links a.active { color: #ffffff !important; }
 .dark-theme .filter-btn { color: #e5e5ea !important; }
-.blue-theme .filter-btn { color: #1a2332 !important; }
