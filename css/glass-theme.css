@@ -1,3 +1,15 @@
+/* ===== BLUE THEME VARIABLES ===== */
+body.blue-theme {
+  --white: #ffffff;
+  --off-white: #f0f9ff;
+  --light-grey: #e0f2fe;
+  --medium-grey: #bae6fd;
+  --dark-grey: #7dd3fc;
+  --text-primary: #0c4a6e;
+  --text-secondary: #0f766e;
+  --border-color: rgba(2, 132, 199, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+}
 /* ============================================
    FULL PREMIUM GLASS DARK + LIGHT — APPLE-STYLE
    Works on light by default; dark via body.dark-theme
