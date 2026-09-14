@@ -16,9 +16,9 @@
   <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="./css/style.css?v=4">
-  <link rel="stylesheet" href="./css/animations.css?v=4">
-  <link rel="stylesheet" href="./css/glass-theme.css?v=4">
+  <link rel="stylesheet" href="./css/style.css?v=5">
+  <link rel="stylesheet" href="./css/animations.css?v=5">
+  <link rel="stylesheet" href="./css/glass-theme.css?v=5">
 
   <style>
     .project-card {
@@ -89,7 +89,7 @@
 <body>
 <script>
 (function(){
-  try{ var t=localStorage.getItem('theme'); if(t&&t!=='light') document.body.classList.add(t+'-theme'); }catch(e){}
+  try{ var t=localStorage.getItem('theme') || 'dark'; document.body.classList.add(t+'-theme'); }catch(e){}
 })();
 </script>
 
@@ -348,7 +348,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="./js/main.js?v=4"></script>
+  <script src="./js/main.js?v=5"></script>
 
 </body>
 </html>

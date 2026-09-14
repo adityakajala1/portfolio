@@ -16,9 +16,9 @@
   <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="./css/style.css?v=4">
-  <link rel="stylesheet" href="./css/animations.css?v=4">
-  <link rel="stylesheet" href="./css/glass-theme.css?v=4">
+  <link rel="stylesheet" href="./css/style.css?v=5">
+  <link rel="stylesheet" href="./css/animations.css?v=5">
+  <link rel="stylesheet" href="./css/glass-theme.css?v=5">
 
   <style>
     .settings-card {
@@ -186,7 +186,7 @@
 <body style="background: #0A0A0A;">
 <script>
 (function(){
-  try{ var t=localStorage.getItem('theme'); if(t&&t!=='light') document.body.classList.add(t+'-theme'); }catch(e){}
+  try{ var t=localStorage.getItem('theme') || 'dark'; document.body.classList.add(t+'-theme'); }catch(e){}
 })();
 </script>
 
@@ -250,10 +250,6 @@
             <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Choose your preferred color scheme</p>
 
             <div class="theme-options">
-              <div class="theme-option theme-light active" data-theme="light">
-                <div class="theme-preview"></div>
-                <div class="theme-option-name">Light</div>
-              </div>
               <div class="theme-option theme-dark" data-theme="dark">
                 <div class="theme-preview"></div>
                 <div class="theme-option-name">Dark</div>
@@ -390,7 +386,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="./js/main.js?v=4"></script>
+  <script src="./js/main.js?v=5"></script>
   <script>
     // Settings functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -438,7 +434,7 @@
       // Export settings
       document.getElementById('export-settings').addEventListener('click', function() {
         const settings = {
-          theme: localStorage.getItem('theme') || 'light',
+          theme: localStorage.getItem('theme') || 'dark',
           animations: localStorage.getItem('animations') !== 'false',
           cursor: localStorage.getItem('cursor') !== 'false',
           reducedMotion: localStorage.getItem('reduced-motion') === 'true',
@@ -462,9 +458,7 @@
 
     function setTheme(theme) {
       document.body.className = document.body.className.split(' ').filter(c => !c.includes('theme')).join(' ');
-      if (theme !== 'light') {
-        document.body.classList.add(theme + '-theme');
-      }
+      document.body.classList.add(theme + '-theme');
       localStorage.setItem('theme', theme);
     }
 
@@ -523,7 +517,7 @@
 
     function loadSettings() {
       // Load theme
-      const savedTheme = localStorage.getItem('theme') || 'light';
+      const savedTheme = localStorage.getItem('theme') || 'dark';
       setTheme(savedTheme);
       document.querySelector(`[data-theme="${savedTheme}"]`)?.classList.add('active');
 
