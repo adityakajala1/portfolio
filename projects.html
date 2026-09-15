@@ -16,9 +16,9 @@
   <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="./css/style.css?v=10">
-  <link rel="stylesheet" href="./css/animations.css?v=10">
-  <link rel="stylesheet" href="./css/glass-theme.css?v=10">
+  <link rel="stylesheet" href="./css/style.css?v=11">
+  <link rel="stylesheet" href="./css/animations.css?v=11">
+  <link rel="stylesheet" href="./css/glass-theme.css?v=11">
 
   <style>
     .project-card {
@@ -87,6 +87,18 @@
   </style>
 </head>
 <body>
+
+  <!-- Gooey Filter for Liquid Effect -->
+  <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+
 <script>
 (function(){
   try{ var t=localStorage.getItem('theme') || 'dark'; document.body.classList.add(t+'-theme'); }catch(e){}
@@ -99,28 +111,18 @@
   </div>
 
   <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-      <a href="./index.html" class="logo">
-        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 4C18 4 16.5 5.5 16.5 7.5C16.5 8.2 16.7 8.8 17 9.3C15.8 9.5 14.8 10.2 14.2 11.2C13.5 10.8 12.7 10.5 11.8 10.5C9.1 10.5 7 12.6 7 15.3C7 16.8 7.6 18.2 8.6 19.2C8.2 20.1 8 21.1 8 22.2C8 27.2 12.5 32 20 36C27.5 32 32 27.2 32 22.2C32 21.1 31.8 20.1 31.4 19.2C32.4 18.2 33 16.8 33 15.3C33 12.6 30.9 10.5 28.2 10.5C27.3 10.5 26.5 10.8 25.8 11.2C25.2 10.2 24.2 9.5 23 9.3C23.3 8.8 23.5 8.2 23.5 7.5C23.5 5.5 22 4 20 4Z" fill="currentColor"/>
-          <circle cx="16" cy="20" r="1.5" fill="white" opacity="0.9"/>
-          <circle cx="24" cy="20" r="1.5" fill="white" opacity="0.9"/>
-        </svg>
-        ADITYA KAJALA
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./projects.html" class="active">Projects</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./settings.html">Settings</a></li>
-      </ul>
-
-      <button class="menu-toggle" aria-label="Toggle menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="15" y2="18"/></svg></button>
+  
+  <nav class="liquid-nav-container">
+    <div class="liquid-nav-links">
+      <div class="liquid-indicator"></div>
+      <a href="index.html" class="liquid-link "><i class="fas fa-home"></i> Home</a>
+      <a href="about.html" class="liquid-link "><i class="fas fa-user"></i> About</a>
+      <a href="projects.html" class="liquid-link active"><i class="fas fa-code"></i> Projects</a>
+      <a href="contact.html" class="liquid-link "><i class="fas fa-envelope"></i> Contact</a>
+      <a href="settings.html" class="liquid-link "><i class="fas fa-cog"></i> Settings</a>
     </div>
   </nav>
+
 
   <!-- Main Content -->
   <main>
@@ -348,7 +350,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="./js/main.js?v=10"></script>
+  <script src="./js/main.js?v=11"></script>
 
 </body>
 </html>

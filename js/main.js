@@ -564,3 +564,42 @@ cards.forEach(card => {
 console.log('%c👋 Hello there!', 'font-size: 20px; color: #0071e3; font-weight: bold;');
 console.log('%cInterested in how this was built? Check out the source code!', 'font-size: 14px; color: #6e6e73;');
 console.log('%cBuilt with ❤️ by Aditya Kajala', 'font-size: 12px; color: #86868b;');
+
+// LIQUID NAV LOGIC
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.liquid-link');
+  const indicator = document.querySelector('.liquid-indicator');
+  const navContainer = document.querySelector('.liquid-nav-links');
+
+  if (!indicator || links.length === 0) return;
+
+  function setIndicator(link) {
+    if (!link) return;
+    const rect = link.getBoundingClientRect();
+    const containerRect = navContainer.getBoundingClientRect();
+    
+    // Set exact width and left position
+    indicator.style.width = Math.round(rect.width) + 'px';
+    indicator.style.left = Math.round(rect.left - containerRect.left) + 'px';
+  }
+
+  // Initial set
+  const activeLink = document.querySelector('.liquid-link.active') || links[0];
+  
+  // Slight delay for font loading to ensure accurate width
+  setTimeout(() => setIndicator(activeLink), 100);
+  
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      setIndicator(link);
+    });
+  });
+
+  navContainer.addEventListener('mouseleave', () => {
+    setIndicator(activeLink);
+  });
+  
+  window.addEventListener('resize', () => {
+    setIndicator(activeLink);
+  });
+});
