@@ -22,7 +22,7 @@
   --glass-bg: rgba(17, 24, 39, 0.7);
 
   /* Typography */
-  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "SF Pro Display", "Helvetica Neue", sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -72,32 +72,6 @@ body {
   color: var(--text-primary);
   background: var(--off-white);
   overflow-x: hidden;
-}
-
-/* Custom Cursor */
-body.custom-cursor {
-  cursor: none;
-}
-
-.cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent-blue);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  opacity: 0;
-}
-
-.cursor.active {
-  opacity: 1;
-}
-
-.cursor.hover {
-  transform: scale(1.5);
-  background: var(--accent-blue-light);
 }
 
 /* ============================================
@@ -284,7 +258,7 @@ nav.scrolled {
    ============================================ */
 
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,8 +726,7 @@ footer {
   nav,
   .hero::before,
   .hero::after,
-  .loader,
-  .cursor {
+  .loader {
     display: none;
   }
 

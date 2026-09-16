@@ -11,10 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initLoader();
   initNavigation();
   initScrollReveal();
-  initCustomCursor();
   initSmoothScroll();
   initFormValidation();
-  initActiveNav();
 });
 
 // ============================================
@@ -45,33 +43,24 @@ function initNavigation() {
   const navLinks = document.querySelector('.nav-links');
   const navItems = document.querySelectorAll('.nav-links a');
 
-  let lastScroll = 0;
-  const scrollThreshold = 100;
 
-  // Scroll behavior
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Add shadow on scroll
-    if (currentScroll > 10) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-
-    // Hide/show nav on scroll (disabled for better UX)
-    // Uncomment below to enable auto-hide
-    /*
-    if (currentScroll > scrollThreshold) {
-      if (currentScroll > lastScroll && !menuToggle.classList.contains('active')) {
-        nav.classList.add('hidden');
-      } else {
-        nav.classList.remove('hidden');
-      }
-    }
-    lastScroll = currentScroll;
-    */
-  });
+  // Scroll shadow via IntersectionObserver on hero
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '-80px 0px 0px 0px'
+    });
+    heroObserver.observe(hero);
+  }
 
   // Mobile menu toggle
   if (menuToggle) {
@@ -109,15 +98,10 @@ function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  function setActiveNav() {
-    const scrollPosition = window.pageYOffset + 100;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.getAttribute('id');
         navLinks.forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('href') === `#${sectionId}` ||
@@ -127,10 +111,14 @@ function initActiveNav() {
         });
       }
     });
-  }
+  }, {
+    threshold: 0.3,
+    rootMargin: '-100px 0px -50% 0px'
+  });
 
-  window.addEventListener('scroll', setActiveNav);
-  setActiveNav(); // Initial call
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
 }
 
 // ============================================
@@ -204,62 +192,6 @@ function initScrollReveal() {
 
   progressBars.forEach(bar => {
     progressObserver.observe(bar);
-  });
-}
-
-// ============================================
-// CUSTOM CURSOR
-// ============================================
-
-function initCustomCursor() {
-  // Only enable on desktop
-  if (window.innerWidth < 768) return;
-
-  const cursor = document.createElement('div');
-  cursor.classList.add('cursor');
-  document.body.appendChild(cursor);
-  document.body.classList.add('custom-cursor');
-
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-  const speed = 0.15;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.classList.add('active');
-  });
-
-  document.addEventListener('mouseleave', () => {
-    cursor.classList.remove('active');
-  });
-
-  // Smooth cursor movement
-  function animateCursor() {
-    const distX = mouseX - cursorX;
-    const distY = mouseY - cursorY;
-
-    cursorX += distX * speed;
-    cursorY += distY * speed;
-
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-
-  // Hover effects
-  const hoverElements = document.querySelectorAll('a, button, .btn, .card');
-
-  hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hover');
-    });
-
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hover');
-    });
   });
 }
 
@@ -446,28 +378,6 @@ if (document.querySelector('.filter-btn')) {
 }
 
 // ============================================
-// PARALLAX EFFECT
-// ============================================
-
-function initParallax() {
-  const parallaxElements = document.querySelectorAll('.parallax');
-
-  if (parallaxElements.length === 0) return;
-
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-
-    parallaxElements.forEach(el => {
-      const speed = el.getAttribute('data-speed') || 0.5;
-      const yPos = -(scrolled * speed);
-      el.style.transform = `translateY(${yPos}px)`;
-    });
-  });
-}
-
-initParallax();
-
-// ============================================
 // MAGNETIC BUTTON EFFECT
 // ============================================
 
@@ -490,46 +400,6 @@ function initMagneticButtons() {
 }
 
 initMagneticButtons();
-
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-// Debounce function for performance
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Throttle function for performance
-function throttle(func, limit) {
-  let inThrottle;
-  return function(...args) {
-    if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  };
-}
-
-// ============================================
-// PERFORMANCE OPTIMIZATION
-// ============================================
-
-// Use throttled scroll event for better performance
-const optimizedScroll = throttle(() => {
-  // Add any scroll-based functionality here
-}, 100);
-
-window.addEventListener('scroll', optimizedScroll);
 
 // ============================================
 // ACCESSIBILITY ENHANCEMENTS
@@ -556,14 +426,6 @@ cards.forEach(card => {
     }
   });
 });
-
-// ============================================
-// CONSOLE MESSAGE
-// ============================================
-
-console.log('%c👋 Hello there!', 'font-size: 20px; color: #0071e3; font-weight: bold;');
-console.log('%cInterested in how this was built? Check out the source code!', 'font-size: 14px; color: #6e6e73;');
-console.log('%cBuilt with ❤️ by Aditya Kajala', 'font-size: 12px; color: #86868b;');
 
 // LIQUID NAV LOGIC
 document.addEventListener('DOMContentLoaded', () => {

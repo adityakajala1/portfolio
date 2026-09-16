@@ -183,7 +183,7 @@
     }
   </style>
 </head>
-<body style="background: #0A0A0A;">
+<body>
 <script>
 (function(){
   try{ var t=localStorage.getItem('theme') || 'dark'; document.body.classList.add(t+'-theme'); }catch(e){}
@@ -231,7 +231,7 @@
 
         <div class="settings-card reveal">
           <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            🎨 Appearance
+            Appearance
           </h2>
 
           <!-- Theme Selection -->
@@ -259,20 +259,12 @@
             <div class="toggle-switch active" data-setting="animations"></div>
           </div>
 
-          <div class="setting-item">
-            <div class="setting-info">
-              <h3>Custom Cursor</h3>
-              <p>Use custom cursor on desktop (desktop only)</p>
-            </div>
-            <div class="toggle-switch active" data-setting="cursor"></div>
-          </div>
-
         </div>
 
         <!-- Accessibility Settings -->
         <div class="settings-card reveal">
           <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            ♿ Accessibility
+            Accessibility
           </h2>
 
           <div class="setting-item">
@@ -301,7 +293,7 @@
         <!-- Performance Settings -->
         <div class="settings-card reveal">
           <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            ⚡ Performance
+            Performance
           </h2>
 
           <div class="setting-item">
@@ -325,7 +317,7 @@
         <!-- About Settings -->
         <div class="settings-card reveal">
           <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            ℹ️ About
+            About
           </h2>
 
           <div style="padding: 1rem 0; color: var(--text-secondary); line-height: 1.8;">
@@ -426,7 +418,6 @@
         const settings = {
           theme: localStorage.getItem('theme') || 'dark',
           animations: localStorage.getItem('animations') !== 'false',
-          cursor: localStorage.getItem('cursor') !== 'false',
           reducedMotion: localStorage.getItem('reduced-motion') === 'true',
           fontSize: localStorage.getItem('font-size') || 'medium',
           performance: localStorage.getItem('performance') === 'true',
@@ -478,13 +469,6 @@
             document.body.style.removeProperty('--transition-fast');
             document.body.style.removeProperty('--transition-smooth');
             document.body.style.removeProperty('--transition-slow');
-          }
-          break;
-        case 'cursor':
-          if (!value) {
-            document.body.classList.remove('custom-cursor');
-            const cursor = document.querySelector('.cursor');
-            if (cursor) cursor.remove();
           }
           break;
         case 'reduced-motion':
