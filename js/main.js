@@ -436,13 +436,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!indicator || links.length === 0) return;
 
   function setIndicator(link) {
-    if (!link) return;
+    if (!link || !indicator || !navContainer) return;
     const rect = link.getBoundingClientRect();
     const containerRect = navContainer.getBoundingClientRect();
-    
-    // Set exact width and left position
-    indicator.style.width = Math.round(rect.width) + 'px';
-    indicator.style.left = Math.round(rect.left - containerRect.left) + 'px';
+    const left = Math.round(rect.left - containerRect.left);
+    const w = Math.round(rect.width);
+    indicator.style.transform = `translateX(${left}px)`;
+    indicator.style.width = w + 'px';
   }
 
   // Initial set
