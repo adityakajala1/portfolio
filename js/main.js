@@ -465,3 +465,62 @@ document.addEventListener('DOMContentLoaded', () => {
     setIndicator(activeLink);
   });
 });
+
+// SPA SCROLL LOGIC & LIQUID NAV UPDATES
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.liquid-link');
+  let currentActive = document.querySelector('.liquid-link.active') || links[0];
+
+  function updateActiveLink() {
+    let scrollY = window.pageYOffset;
+    
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 150;
+      const sectionId = current.getAttribute('id');
+      
+      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        links.forEach(link => {
+          link.classList.remove('active');
+          if(link.getAttribute('href') === '#' + sectionId) {
+            link.classList.add('active');
+            currentActive = link;
+          }
+        });
+      }
+    });
+  }
+
+  // Smooth scroll for nav links
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if(targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        currentActive = link;
+        
+        // Liquid indicator update is handled by the mouseleave/resize logic already in main.js, 
+        // but we can manually trigger it here too.
+        const indicator = document.querySelector('.liquid-indicator');
+        const navContainer = document.querySelector('.liquid-nav-links');
+        if (indicator && navContainer) {
+            const rect = link.getBoundingClientRect();
+            const containerRect = navContainer.getBoundingClientRect();
+            const left = Math.round(rect.left - containerRect.left);
+            const w = Math.round(rect.width);
+            indicator.style.transform = 	ranslateX(
+      }
+    });
+  });
+
+  window.addEventListener('scroll', updateActiveLink);
+});

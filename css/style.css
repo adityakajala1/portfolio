@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    APPLE-STYLE PREMIUM PORTFOLIO - ADITYA KAJALA
    Design System & Global Styles - DARK THEME
    ============================================ */
@@ -265,7 +265,7 @@ nav.scrolled {
   padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
   position: relative;
-  overflow: hidden;
+  
   background: linear-gradient(135deg, #0A0A0A 0%, #111827 60%, #0A0A0A 100%);
 }
 
@@ -882,3 +882,4 @@ footer {
 .btn-liquid:active {
   transform: scale(0.95);
 }
+
