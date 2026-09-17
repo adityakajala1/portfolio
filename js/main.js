@@ -508,8 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
         currentActive = link;
         
-        // Liquid indicator update is handled by the mouseleave/resize logic already in main.js, 
-        // but we can manually trigger it here too.
+        // Manual liquid indicator update
         const indicator = document.querySelector('.liquid-indicator');
         const navContainer = document.querySelector('.liquid-nav-links');
         if (indicator && navContainer) {
@@ -517,7 +516,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const containerRect = navContainer.getBoundingClientRect();
             const left = Math.round(rect.left - containerRect.left);
             const w = Math.round(rect.width);
-            indicator.style.transform = 	ranslateX(
+            indicator.style.transform = 	ranslateX(px);
+            indicator.style.width = w + 'px';
+        }
       }
     });
   });
