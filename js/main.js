@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    MAIN JAVASCRIPT - ADITYA KAJALA PORTFOLIO
    Core functionality and interactions
    ============================================ */
@@ -323,7 +323,7 @@ function showSuccessMessage() {
     z-index: 10000;
     animation: slideInDown 0.4s ease, fadeOut 0.4s ease 2.6s forwards;
   `;
-  successMsg.textContent = '✓ Message sent successfully!';
+  successMsg.textContent = 'âœ“ Message sent successfully!';
 
   document.body.appendChild(successMsg);
 
@@ -430,18 +430,9 @@ cards.forEach(card => {
 // LIQUID NAV LOGIC
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.liquid-link');
-  const indicator = document.querySelector('.liquid-indicator');
-  const navContainer = document.querySelector('.liquid-nav-links');
+  
 
-  if (!indicator || links.length === 0) return;
-
-  function setIndicator(link) {
-    if (!link || !indicator || !navContainer) return;
-    const rect = link.getBoundingClientRect();
-    const containerRect = navContainer.getBoundingClientRect();
-    const left = Math.round(rect.left - containerRect.left);
-    const w = Math.round(rect.width);
-    indicator.style.transform = `translateX(${left}px)`;
+  px)`;
     indicator.style.width = w + 'px';
   }
 
@@ -449,21 +440,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeLink = document.querySelector('.liquid-link.active') || links[0];
   
   // Slight delay for font loading to ensure accurate width
-  setTimeout(() => setIndicator(activeLink), 100);
   
-  links.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      setIndicator(link);
-    });
+  
+  
   });
 
-  navContainer.addEventListener('mouseleave', () => {
-    setIndicator(activeLink);
-  });
   
-  window.addEventListener('resize', () => {
-    setIndicator(activeLink);
-  });
+  
+  
 });
 
 // SPA SCROLL LOGIC & LIQUID NAV UPDATES
@@ -508,20 +492,11 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
         currentActive = link;
         
-        // Manual liquid indicator update
-        const indicator = document.querySelector('.liquid-indicator');
-        const navContainer = document.querySelector('.liquid-nav-links');
-        if (indicator && navContainer) {
-            const rect = link.getBoundingClientRect();
-            const containerRect = navContainer.getBoundingClientRect();
-            const left = Math.round(rect.left - containerRect.left);
-            const w = Math.round(rect.width);
-            indicator.style.transform = 	ranslateX(px);
-            indicator.style.width = w + 'px';
-        }
+        
       }
     });
   });
 
   window.addEventListener('scroll', updateActiveLink);
 });
+
