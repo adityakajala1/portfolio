@@ -427,28 +427,7 @@ cards.forEach(card => {
   });
 });
 
-// SPA SCROLL LOGIC & NAV UPDATES
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.liquid-link');
-  let currentActive = document.querySelector('.liquid-link.active') || links[0];
 
-  function updateActiveLink() {
-    let scrollY = window.pageYOffset;
-    
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 150;
-      const sectionId = current.getAttribute('id');
-      
-      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        links.forEach(link => {
-          link.classList.remove('active');
-          if(link.getAttribute('href') === '#' + sectionId) {
-            link.classList.add('active');
-            currentActive = link;
-          }
-        });
       }
     });
   }
@@ -474,3 +453,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveLink);
 });
+
