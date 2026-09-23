@@ -452,5 +452,4 @@ cards.forEach(card => {
   });
 
   window.addEventListener('scroll', updateActiveLink);
-});
-
+});\n
