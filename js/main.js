@@ -427,30 +427,7 @@ cards.forEach(card => {
   });
 });
 
-// LIQUID NAV LOGIC
-document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('.liquid-link');
-  
-
-  px)`;
-    indicator.style.width = w + 'px';
-  }
-
-  // Initial set
-  const activeLink = document.querySelector('.liquid-link.active') || links[0];
-  
-  // Slight delay for font loading to ensure accurate width
-  
-  
-  
-  });
-
-  
-  
-  
-});
-
-// SPA SCROLL LOGIC & LIQUID NAV UPDATES
+// SPA SCROLL LOGIC & NAV UPDATES
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const links = document.querySelectorAll('.liquid-link');
@@ -491,12 +468,9 @@ document.addEventListener('DOMContentLoaded', () => {
         links.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
         currentActive = link;
-        
-        
       }
     });
   });
 
   window.addEventListener('scroll', updateActiveLink);
 });
-
