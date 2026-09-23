@@ -426,30 +426,3 @@ cards.forEach(card => {
     }
   });
 });
-
-
-      }
-    });
-  }
-
-  // Smooth scroll for nav links
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if(targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 80,
-          behavior: 'smooth'
-        });
-        
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        currentActive = link;
-      }
-    });
-  });
-
-  window.addEventListener('scroll', updateActiveLink);
-});\n
