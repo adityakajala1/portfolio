@@ -779,7 +779,7 @@ footer {
     inset 0 -4px 6px rgba(0, 0, 0, 0.1),
     0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  filter: url('#gooey');
+  
 }
 
 .dark-theme .liquid-nav-container {
@@ -881,5 +881,32 @@ footer {
 
 .btn-liquid:active {
   transform: scale(0.95);
+}
+
+/* MOBILE RESPONSIVE LIQUID NAV */
+@media (max-width: 768px) {
+  .liquid-nav-container {
+    top: auto;
+    bottom: 2rem; /* Move to bottom on phone for better reachability */
+    padding: 6px;
+    width: 90%;
+    max-width: 400px;
+    justify-content: center;
+  }
+  .liquid-nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .liquid-link {
+    padding: 0.75rem 0;
+    flex: 1;
+    justify-content: center;
+  }
+  .liquid-link span, .liquid-link {
+    font-size: 0; /* Hide text */
+  }
+  .liquid-link i {
+    font-size: 1.25rem; /* Make icon visible */
+  }
 }
 

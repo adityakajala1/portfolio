@@ -22,24 +22,15 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=13" rel="stylesheet"/>
-<link href="./css/animations.css?v=13" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=13" rel="stylesheet"/>
+<link href="./css/style.css?v=14" rel="stylesheet"/>
+<link href="./css/animations.css?v=14" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=14" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
 </head>
 <body>
-<!-- Gooey Filter for Liquid Effect -->
-<svg height="0" style="visibility: hidden; position: absolute;" version="1.1" width="0" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<filter id="gooey">
-<fegaussianblur in="SourceGraphic" result="blur" stddeviation="4"></fegaussianblur>
-<fecolormatrix in="blur" mode="matrix" result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"></fecolormatrix>
-<fecomposite in="SourceGraphic" in2="goo" operator="atop"></fecomposite>
-</filter>
-</defs>
-</svg>
+
 <script>
 (function(){
   try{ var t=localStorage.getItem('theme') || 'dark'; document.body.classList.add(t+'-theme'); }catch(e){}
@@ -642,8 +633,10 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=13"></script>
+<script src="./js/main.js?v=14"></script>
 </body>
 </html>
+
+
 
 
