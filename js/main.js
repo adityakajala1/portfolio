@@ -140,7 +140,7 @@ function initSmoothScroll() {
       const target = document.getElementById(targetId);
 
       if (target) {
-        const nav = document.querySelector(\'nav\');
+        const nav = document.querySelector('nav');
         const navHeight = nav ? nav.offsetHeight : 0;
         const targetPosition = target.offsetTop - navHeight;
 
