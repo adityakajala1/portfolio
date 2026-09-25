@@ -1,7 +1,21 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Original minimalist bunny-inspired silhouette -->
-  <path d="M20 4C18 4 16.5 5.5 16.5 7.5C16.5 8.2 16.7 8.8 17 9.3C15.8 9.5 14.8 10.2 14.2 11.2C13.5 10.8 12.7 10.5 11.8 10.5C9.1 10.5 7 12.6 7 15.3C7 16.8 7.6 18.2 8.6 19.2C8.2 20.1 8 21.1 8 22.2C8 27.2 12.5 32 20 36C27.5 32 32 27.2 32 22.2C32 21.1 31.8 20.1 31.4 19.2C32.4 18.2 33 16.8 33 15.3C33 12.6 30.9 10.5 28.2 10.5C27.3 10.5 26.5 10.8 25.8 11.2C25.2 10.2 24.2 9.5 23 9.3C23.3 8.8 23.5 8.2 23.5 7.5C23.5 5.5 22 4 20 4Z" fill="currentColor"/>
-  <!-- Simple dot eyes -->
-  <circle cx="16" cy="20" r="1.5" fill="white" opacity="0.9"/>
-  <circle cx="24" cy="20" r="1.5" fill="white" opacity="0.9"/>
+﻿<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+  <!-- Sleek Dark Rounded Background -->
+  <rect width="64" height="64" rx="16" fill="#0A0A0A" />
+  <rect width="64" height="64" rx="16" fill="rgba(255, 255, 255, 0.05)" />
+  
+  <!-- Geometric 'A' / Upward Tech Chevron -->
+  <path d="M32 14 L12 50 L22 50 L32 31 L42 50 L52 50 L32 14 Z" fill="url(#blueGrad)"/>
+  
+  <!-- Glowing AI Node inside the A -->
+  <circle cx="32" cy="42" r="5" fill="url(#cyanGrad)"/>
 </svg>
