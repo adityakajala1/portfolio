@@ -13,57 +13,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 2. Custom Premium Cursor
 function initCustomCursor() {
-  const dot = document.getElementById('custom-cursor-dot');
-  const ring = document.getElementById('custom-cursor-ring');
-  
-  if (!dot || !ring) return;
+  const inverter = document.getElementById('cursor-inverter');
+  if (!inverter) return;
   
   if (window.matchMedia('(pointer: coarse)').matches) {
-    dot.style.display = 'none';
-    ring.style.display = 'none';
+    inverter.style.display = 'none';
     return;
   }
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
-  let ringX = mouseX;
-  let ringY = mouseY;
+  let invX = mouseX;
+  let invY = mouseY;
   
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    
-    dot.style.transform = 'translate(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%))';
   });
   
   function renderCursor() {
-    ringX += (mouseX - ringX) * 0.15;
-    ringY += (mouseY - ringY) * 0.15;
-    ring.style.transform = 'translate(calc(' + ringX + 'px - 50%), calc(' + ringY + 'px - 50%))';
+    // Faster lerp: 0.4 instead of 0.15 for snappy response
+    invX += (mouseX - invX) * 0.4;
+    invY += (mouseY - invY) * 0.4;
+    inverter.style.transform = 'translate(calc(' + invX + 'px - 50%), calc(' + invY + 'px - 50%))';
     requestAnimationFrame(renderCursor);
   }
   requestAnimationFrame(renderCursor);
   
-  const hoverTargets = document.querySelectorAll('a, button, .card, .btn');
+  // Expand cursor on hover
+  const hoverTargets = document.querySelectorAll('a, button, .card, .project-card, h1, h2, h3, .contact-hover-card');
   hoverTargets.forEach(target => {
-    target.addEventListener('mouseenter', () => {
-      ring.style.width = '50px';
-      ring.style.height = '50px';
-      ring.style.background = 'rgba(59, 130, 246, 0.1)';
-      ring.style.borderColor = 'rgba(59, 130, 246, 0.8)';
-      dot.style.transform = 'translate(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%)) scale(1.5)';
-    });
-    target.addEventListener('mouseleave', () => {
-      ring.style.width = '36px';
-      ring.style.height = '36px';
-      ring.style.background = 'transparent';
-      ring.style.borderColor = 'rgba(59, 130, 246, 0.5)';
-      dot.style.transform = 'translate(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%)) scale(1)';
-    });
+    target.addEventListener('mouseenter', () => inverter.classList.add('hovering'));
+    target.addEventListener('mouseleave', () => inverter.classList.remove('hovering'));
   });
 }
 
-// 3. Scroll Progress Bar
 function initScrollProgress() {
   const progressBar = document.getElementById('scroll-progress');
   if (!progressBar) return;

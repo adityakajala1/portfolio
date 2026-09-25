@@ -963,3 +963,28 @@ footer {
 }
 
 body { background: transparent !important; }
+
+/* ============================================
+   DIFFERENCE INVERTER CURSOR
+============================================ */
+#cursor-inverter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1), height 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+#cursor-inverter.hovering {
+  width: 80px;
+  height: 80px;
+}
+@media (max-width: 768px) {
+  #cursor-inverter { display: none; }
+}
