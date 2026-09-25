@@ -274,7 +274,7 @@ function initFormValidation() {
           form.reset();
           showSuccessMessage();
         } else {
-          showError(messageInput, 'Failed to send message. Please try again.');
+          showError(messageInput, data.message || 'Failed to send message. Please try again.');
         }
       })
       .catch(error => {
