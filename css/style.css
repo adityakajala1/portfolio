@@ -872,3 +872,53 @@ footer {
     background: linear-gradient(135deg, var(--accent-blue) 0%, #0077ed 100%);
     color: white;
 }
+
+/* Project Filters */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.dark-theme .filter-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.blue-theme .filter-btn {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(2, 132, 199, 0.2);
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.blue-theme .filter-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.filter-btn.active {
+  background: var(--accent-blue);
+  color: #ffffff !important;
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
