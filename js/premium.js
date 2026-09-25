@@ -80,7 +80,7 @@ function initScrollProgress() {
 function init3DTilt() {
   if (typeof VanillaTilt === 'undefined') return;
   
-  VanillaTilt.init(document.querySelectorAll('.card, .contact-info-card, .contact-hover-card'), {
+  VanillaTilt.init(document.querySelectorAll('.project-card, .contact-hover-card'), {
     max: 5,
     speed: 400,
     glare: true,
