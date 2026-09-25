@@ -25,8 +25,7 @@ body {
 /* ----- DARK BACKDROP ----- */
 body.dark-theme,
 .dark-theme body {
-  background: linear-gradient(135deg, #0f0f16 0%, #111118 35%, #161622 70%, #0a0a10 100%) !important;
-  background-attachment: fixed !important;
+  
   color: #f5f5f7 !important;
 }
 
@@ -150,8 +149,7 @@ footer { background: rgba(255,255,255,0.65) !important; border-top-color: rgba(2
 /* ===== BLUE THEME - premium sky-blue glass ===== */
 body.blue-theme,
 .blue-theme body {
-  background: radial-gradient(circle at top left, #e0f2fe 0%, #bae6fd 40%, #7dd3fc 70%, #38bdf8 100%) !important;
-  background-attachment: fixed !important;
+  
   color: #0c4a6e !important;
 }
 .blue-theme nav,
@@ -313,4 +311,28 @@ main,
 
 #global-bg {
     background: transparent !important;
+}
+
+/* ========================================================== */
+/* BULLETPROOF BACKGROUND FIX FOR iOS/CHROME 100VH TILING BUG */
+/* ========================================================== */
+
+/* 1. Force the body to be completely transparent so it NEVER paints a tiled background */
+body, body.dark-theme, body.blue-theme, .blue-theme body, .dark-theme body {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* 2. Paint the gradients ONLY on the fixed 100vh global-bg div */
+body.dark-theme #global-bg, .dark-theme body #global-bg {
+    background: linear-gradient(135deg, #0f0f16 0%, #111118 35%, #161622 70%, #0a0a10 100%) !important;
+}
+
+body.blue-theme #global-bg, .blue-theme body #global-bg {
+    background: radial-gradient(circle at top left, #e0f2fe 0%, #bae6fd 40%, #7dd3fc 70%, #38bdf8 100%) !important;
+}
+
+body:not(.dark-theme):not(.blue-theme) #global-bg {
+    background: linear-gradient(135deg, #e8e8f0 0%, #d4dde8 40%, #c8dce8 70%, #dcecf5 100%) !important;
 }
