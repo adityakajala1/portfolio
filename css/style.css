@@ -922,3 +922,16 @@ footer {
   border-color: var(--accent-blue);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
+
+/* Contact Hover Card */
+.contact-hover-card {
+  border: 2px solid transparent !important;
+}
+.contact-hover-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.blue-theme .contact-hover-card:hover {
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+}
