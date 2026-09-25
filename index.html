@@ -22,14 +22,27 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=31" rel="stylesheet"/>
-<link href="./css/animations.css?v=31" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=31" rel="stylesheet"/>
+<link href="./css/style.css?v=32" rel="stylesheet"/>
+<link href="./css/animations.css?v=32" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=32" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
 </head>
 <body>
+
+  <!-- 1. Terminal Boot Sequence -->
+  <div id="boot-sequence" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050505; z-index: 999999; display: flex; flex-direction: column; justify-content: center; padding: 2rem; font-family: monospace; color: #3B82F6; transition: opacity 0.5s ease-out;">
+    <div id="boot-text" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; width: 100%;"></div>
+  </div>
+
+  <!-- 2. Scroll Progress Bar -->
+  <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #3B82F6, #60A5FA); z-index: 99999; width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);"></div>
+
+  <!-- 3. Custom Premium Cursor -->
+  <div id="custom-cursor-dot" style="position: fixed; top: 0; left: 0; width: 8px; height: 8px; background: #3B82F6; border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); transition: background 0.2s, transform 0.1s;"></div>
+  <div id="custom-cursor-ring" style="position: fixed; top: 0; left: 0; width: 36px; height: 36px; border: 1px solid rgba(59, 130, 246, 0.5); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, border-color 0.2s, background 0.2s; box-sizing: border-box;"></div>
+
 
   <!-- Theme Toggle Lamp -->
   <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 1.5rem; right: 0; z-index: 1000; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: none; padding: 0;">
@@ -105,7 +118,8 @@
 <!-- Navigation -->
 
 <!-- Main Content -->
-<main><section class="hero" id="home">
+<main><section class="hero" id="home" style="position: relative; overflow: hidden;">
+  <canvas id="neural-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
 <div class="hero-content">
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem;">
     <div style="font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 500; color: var(--text-secondary); margin-bottom: 0.25rem; animation: fadeInUp 0.8s ease forwards;">
@@ -607,7 +621,12 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=31"></script>
+<script src="./js/main.js?v=32"></script>
+
+  <!-- Premium Interactions (Tilt, Cursor, Neural Canvas, Boot) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="./js/premium.js?v=32"></script>
+
 </body>
 </html>
 

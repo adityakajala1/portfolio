@@ -935,3 +935,10 @@ footer {
 .blue-theme .contact-hover-card:hover {
   box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
 }
+
+/* Premium Cursor Overrides */
+@media (pointer: fine) {
+  body, a, button, input, textarea, .card, .btn, select, span {
+    cursor: none !important;
+  }
+}
