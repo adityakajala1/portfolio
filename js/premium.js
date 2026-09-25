@@ -39,9 +39,9 @@ function initCustomCursor() {
     const p = document.createElement('div');
     p.className = 'data-particle';
     p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-    p.style.left = mouseX + 'px';
+    p.style.left = (mouseX + (Math.random() * 80 - 40)) + 'px';
     p.style.top = mouseY + 'px';
-    p.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+    
     partContainer.appendChild(p);
     
     // Garbage collect particle after animation ends
