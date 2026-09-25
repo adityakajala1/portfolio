@@ -34,7 +34,7 @@ function initBootSequence() {
       p.textContent = lines[lineIndex];
       bootText.appendChild(p);
       lineIndex++;
-      setTimeout(typeLine, 300); // 300ms per line
+      setTimeout(typeLine, 300);
     } else {
       setTimeout(() => {
         bootScreen.style.opacity = '0';
@@ -55,7 +55,6 @@ function initCustomCursor() {
   
   if (!dot || !ring) return;
   
-  // Only activate on devices with a mouse
   if (window.matchMedia('(pointer: coarse)').matches) {
     dot.style.display = 'none';
     ring.style.display = 'none';
@@ -71,13 +70,13 @@ function initCustomCursor() {
     mouseX = e.clientX;
     mouseY = e.clientY;
     
-    dot.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%));
+    dot.style.transform = 'translate(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%))';
   });
   
   function renderCursor() {
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
-    ring.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%));
+    ring.style.transform = 'translate(calc(' + ringX + 'px - 50%), calc(' + ringY + 'px - 50%))';
     requestAnimationFrame(renderCursor);
   }
   requestAnimationFrame(renderCursor);
@@ -89,14 +88,14 @@ function initCustomCursor() {
       ring.style.height = '50px';
       ring.style.background = 'rgba(59, 130, 246, 0.1)';
       ring.style.borderColor = 'rgba(59, 130, 246, 0.8)';
-      dot.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%)) scale(1.5);
+      dot.style.transform = 'translate(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%)) scale(1.5)';
     });
     target.addEventListener('mouseleave', () => {
       ring.style.width = '36px';
       ring.style.height = '36px';
       ring.style.background = 'transparent';
       ring.style.borderColor = 'rgba(59, 130, 246, 0.5)';
-      dot.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%)) scale(1);
+      dot.style.transform = 'translate(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%)) scale(1)';
     });
   });
 }
@@ -210,7 +209,7 @@ function initNeuralCanvas() {
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
           const opacity = 1 - (dist / connectionDistance);
-          ctx.strokeStyle = f'rgba(59, 130, 246, {opacity * 0.2})';
+          ctx.strokeStyle = 'rgba(59, 130, 246, ' + (opacity * 0.2) + ')';
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -225,7 +224,7 @@ function initNeuralCanvas() {
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(mouse.x, mouse.y);
         const opacity = 1 - (mdist / (connectionDistance * 1.5));
-        ctx.strokeStyle = f'rgba(96, 165, 250, {opacity * 0.4})';
+        ctx.strokeStyle = 'rgba(96, 165, 250, ' + (opacity * 0.4) + ')';
         ctx.lineWidth = 1.5;
         ctx.stroke();
       }
