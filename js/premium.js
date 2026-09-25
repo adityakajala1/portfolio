@@ -13,39 +13,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 2. Custom Premium Cursor
 function initCustomCursor() {
-  const inverter = document.getElementById('cursor-inverter');
-  if (!inverter) return;
+  const dataDot = document.getElementById('cursor-data-dot');
+  const partContainer = document.getElementById('particles-container');
+  
+  if (!dataDot || !partContainer) return;
   
   if (window.matchMedia('(pointer: coarse)').matches) {
-    inverter.style.display = 'none';
+    dataDot.style.display = 'none';
+    partContainer.style.display = 'none';
     return;
   }
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
-  let invX = mouseX;
-  let invY = mouseY;
+  let lastPartX = mouseX;
+  let lastPartY = mouseY;
+  const symbols = ['∑', '∆', 'π', 'θ', 'λ', '0', '1', 'f(x)', 'μ', 'σ', '{ }', '< >', '!='];
   
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
+
+  function spawnParticle() {
+    const p = document.createElement('div');
+    p.className = 'data-particle';
+    p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+    p.style.left = mouseX + 'px';
+    p.style.top = mouseY + 'px';
+    p.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+    partContainer.appendChild(p);
+    
+    // Garbage collect particle after animation ends
+    setTimeout(() => { p.remove(); }, 800);
+  }
   
   function renderCursor() {
-    // Faster lerp: 0.4 instead of 0.15 for snappy response
-    invX += (mouseX - invX) * 0.4;
-    invY += (mouseY - invY) * 0.4;
-    inverter.style.transform = 'translate(calc(' + invX + 'px - 50%), calc(' + invY + 'px - 50%))';
+    dataDot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
+    
+    // Spawn particle based on distance moved
+    const dist = Math.hypot(mouseX - lastPartX, mouseY - lastPartY);
+    if(dist > 25) {
+      spawnParticle();
+      lastPartX = mouseX;
+      lastPartY = mouseY;
+    }
     requestAnimationFrame(renderCursor);
   }
   requestAnimationFrame(renderCursor);
-  
-  // Expand cursor on hover
-  const hoverTargets = document.querySelectorAll('a, button, .card, .project-card, h1, h2, h3, .contact-hover-card');
-  hoverTargets.forEach(target => {
-    target.addEventListener('mouseenter', () => inverter.classList.add('hovering'));
-    target.addEventListener('mouseleave', () => inverter.classList.remove('hovering'));
-  });
 }
 
 function initScrollProgress() {
