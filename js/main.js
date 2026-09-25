@@ -452,12 +452,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 150);
     });
     
-    // Hover effect
-    lampBtn.addEventListener('mouseenter', () => {
-      lampBtn.style.boxShadow = '0 0 15px var(--accent-blue)';
-    });
-    lampBtn.addEventListener('mouseleave', () => {
-      lampBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-    });
+
   }
 });
