@@ -23,6 +23,7 @@ function initCustomCursor() {
     partContainer.style.display = 'none';
     return;
   }
+  document.body.classList.add('custom-cursor-active');
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
@@ -108,7 +109,13 @@ function initMathEmbers() {
     mCanvas.style.width = width + 'px';
     mCanvas.style.height = height + 'px';
   }
-  window.addEventListener('resize', resizeCanvas);
+  let lastWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth !== lastWidth) {
+      lastWidth = window.innerWidth;
+      resizeCanvas();
+    }
+  });
   resizeCanvas();
 
   const symbols = ['∑', 'λ', '∇', '∫', '∆', 'π', 'θ', 'f(x)'];

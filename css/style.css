@@ -1018,3 +1018,9 @@ body.blue-theme .data-particle { color: #0c4a6e; }
 @media (max-width: 768px) {
   #cursor-inverter { display: none; }
 }
+
+
+/* Safely hide default cursor only when custom cursor is active */
+body.custom-cursor-active, body.custom-cursor-active * {
+  cursor: none !important;
+}
