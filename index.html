@@ -22,9 +22,9 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=28" rel="stylesheet"/>
-<link href="./css/animations.css?v=28" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=28" rel="stylesheet"/>
+<link href="./css/style.css?v=29" rel="stylesheet"/>
+<link href="./css/animations.css?v=29" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=29" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
@@ -32,7 +32,7 @@
 <body>
 
   <!-- Theme Toggle Lamp -->
-  <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 4rem; right: 0; z-index: 1000; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: none; padding: 0;">
+  <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 1.5rem; right: 0; z-index: 1000; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: none; padding: 0;">
     <div style="position: relative;" class="lamp-container">
       <svg 
         width="38" 
@@ -108,12 +108,15 @@
 <main><section class="hero" id="home">
 <div class="hero-content">
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem;">
-    <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text-primary); animation: fadeInUp 0.8s ease forwards;">
-      Hello, I'm <span class="text-gradient" style="background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Aditya Kajala</span>.
-    </h1>
-    <h2 style="font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 400; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.6; animation: fadeInUp 0.8s ease 0.2s forwards;">
-      Building the future with <span style="color: var(--accent-blue); font-weight: 600;">AI &amp; Machine Learning</span>.
-    </h2>
+    <div style="font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 500; color: var(--text-secondary); margin-bottom: 0.25rem; animation: fadeInUp 0.8s ease forwards;">
+        Hello, I'm
+      </div>
+      <h1 style="font-size: clamp(2.5rem, 8vw, 6.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; color: var(--text-primary); white-space: nowrap; animation: fadeInUp 0.8s ease 0.1s forwards;">
+        <span class="text-gradient" style="background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Aditya Kajala</span>
+      </h1>
+      <h2 style="font-size: clamp(1.15rem, 3vw, 1.75rem); font-weight: 400; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.6; animation: fadeInUp 0.8s ease 0.2s forwards;">
+        Building the future with <span style="color: var(--accent-blue); font-weight: 600;">AI &amp; Machine Learning</span>.
+      </h2>
   </div>
 <p class="hero-description">
           Second-year B.Tech CSE student specializing in AI &amp; ML, passionate about creating intelligent solutions and exploring the intersection of technology and innovation.
@@ -630,7 +633,7 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=28"></script>
+<script src="./js/main.js?v=29"></script>
 </body>
 </html>
 
