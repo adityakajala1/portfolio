@@ -143,8 +143,8 @@ footer { background: rgba(255,255,255,0.65) !important; border-top-color: rgba(2
 .scroll-indicator::before { background: rgba(0,113,227,0.85) !important; }
 
 /* Hero special glass */
-.hero { background: radial-gradient(circle at 30% 20%, rgba(240,245,255,0.85) 0%, rgba(232,238,245,0.85) 60%, rgba(220,228,238,0.85) 100%) !important; }
-.dark-theme .hero { background: radial-gradient(circle at 30% 20%, rgba(20,22,35,0.9) 0%, rgba(12,14,22,0.9) 60%, rgba(8,10,16,0.9) 100%) !important; }
+.hero { background: transparent !important; }
+.dark-theme .hero { background: transparent !important; }
 .dark-theme .hero::before, .dark-theme .hero::after { background: rgba(0,113,227,0.15) !important; filter: blur(120px) !important; opacity: 0.4 !important; }
 
 /* ===== BLUE THEME - premium sky-blue glass ===== */
@@ -188,7 +188,7 @@ body.blue-theme,
 .blue-theme footer { background: rgba(255, 255, 255, 0.6) !important; border-top-color: rgba(255, 255, 255, 0.7) !important; }
 .blue-theme .social-links a { background: rgba(255, 255, 255, 0.7) !important; border-color: rgba(2, 132, 199, 0.3) !important; }
 .blue-theme .social-links a:hover { background: rgba(2, 132, 199, 0.9) !important; border-color: #0284c7 !important; }
-.blue-theme .hero { background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.6) 0%, rgba(224, 242, 254, 0.5) 60%, rgba(186, 230, 253, 0.4) 100%) !important; }
+.blue-theme .hero { background: transparent !important; }
 .blue-theme .hero::before, .blue-theme .hero::after { background: rgba(255, 255, 255, 0.6) !important; filter: blur(80px) !important; }
 .blue-theme .logo, .blue-theme .nav-links a, .blue-theme .card-title, .blue-theme .section-title, .blue-theme h2, .blue-theme .hero-subtitle, .blue-theme .hero-description, .blue-theme .footer-text, .blue-theme .hero h1, .blue-theme .btn-secondary, .blue-theme .btn-ghost, .blue-theme .section-description, .blue-theme .form-label, .blue-theme .form-input, .blue-theme .form-textarea, .blue-theme .social-links a { color: #0c4a6e !important; }
 .blue-theme .social-links a:hover { color: #ffffff !important; }
@@ -262,4 +262,8 @@ body:not(.dark-theme):not(.blue-theme) .nav-links a.active { color: #000000 !imp
 .blue-theme .quick-facts-card div, 
 .blue-theme .quick-facts-card h3 { 
     color: #0c4a6e !important; 
+}
+
+.hero::before, .hero::after, .dark-theme .hero::before, .dark-theme .hero::after, .blue-theme .hero::before, .blue-theme .hero::after {
+  display: none !important;
 }
