@@ -867,3 +867,8 @@ footer {
   background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
 }
+
+.quick-facts-card {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #0077ed 100%);
+    color: white;
+}

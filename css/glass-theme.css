@@ -257,3 +257,9 @@ body:not(.dark-theme):not(.blue-theme) .nav-links a.active { color: #000000 !imp
 }
 .dark-theme .nav-links a.active { color: #ffffff !important; }
 .dark-theme .filter-btn { color: #e5e5ea !important; }
+
+.blue-theme .quick-facts-card, 
+.blue-theme .quick-facts-card div, 
+.blue-theme .quick-facts-card h3 { 
+    color: #0c4a6e !important; 
+}
