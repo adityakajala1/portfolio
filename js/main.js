@@ -426,3 +426,38 @@ cards.forEach(card => {
     }
   });
 });
+
+// THEME TOGGLE LAMP LOGIC
+document.addEventListener('DOMContentLoaded', () => {
+  const lampBtn = document.getElementById('theme-lamp');
+  if (lampBtn) {
+    lampBtn.addEventListener('click', () => {
+      const body = document.body;
+      const isDark = body.classList.contains('dark-theme');
+      
+      if (isDark) {
+        body.classList.remove('dark-theme');
+        body.classList.add('blue-theme');
+        try { localStorage.setItem('theme', 'blue'); } catch(e) {}
+      } else {
+        body.classList.remove('blue-theme');
+        body.classList.add('dark-theme');
+        try { localStorage.setItem('theme', 'dark'); } catch(e) {}
+      }
+      
+      // Simple pulse animation on click
+      lampBtn.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        lampBtn.style.transform = 'scale(1)';
+      }, 150);
+    });
+    
+    // Hover effect
+    lampBtn.addEventListener('mouseenter', () => {
+      lampBtn.style.boxShadow = '0 0 15px var(--accent-blue)';
+    });
+    lampBtn.addEventListener('mouseleave', () => {
+      lampBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+    });
+  }
+});

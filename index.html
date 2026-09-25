@@ -22,14 +22,24 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=18" rel="stylesheet"/>
-<link href="./css/animations.css?v=18" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=18" rel="stylesheet"/>
+<link href="./css/style.css?v=19" rel="stylesheet"/>
+<link href="./css/animations.css?v=19" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=19" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
 </head>
-<body>
+<body>\n
+  <!-- Theme Toggle Lamp -->
+  <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1000; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-primary); transition: all 0.3s ease;" class="lamp-icon">
+      <!-- A minimalist lamp/lightbulb icon -->
+      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+      <path d="M9 18h6"></path>
+      <path d="M10 22h4"></path>
+    </svg>
+  </button>
+
 
 <script>
 (function(){
@@ -539,91 +549,6 @@
 </div>
 </div>
 </div>
-</div></section><section id="settings" style="padding-top: 8rem; padding-bottom: 8rem;"><div class="container section-header reveal text-center"><h2 class="section-title">Settings &amp; Preferences</h2></div><div class="settings-card reveal">
-<h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            Appearance
-          </h2>
-<!-- Theme Selection -->
-<div style="margin-bottom: 2rem;">
-<h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Color Theme</h3>
-<p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Choose your preferred color scheme</p>
-<div class="theme-options">
-<div class="theme-option theme-dark" data-theme="dark">
-<div class="theme-preview"></div>
-<div class="theme-option-name">Dark</div>
-</div>
-<div class="theme-option theme-blue" data-theme="blue">
-<div class="theme-preview"></div>
-<div class="theme-option-name">Blue</div>
-</div>
-</div>
-</div>
-<div class="setting-item">
-<div class="setting-info">
-<h3>Smooth Animations</h3>
-<p>Enable smooth scroll and element animations</p>
-</div>
-<div class="toggle-switch active" data-setting="animations"></div>
-</div>
-</div><div class="settings-card reveal">
-<h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            Accessibility
-          </h2>
-<div class="setting-item">
-<div class="setting-info">
-<h3>Reduced Motion</h3>
-<p>Minimize animations for motion sensitivity</p>
-</div>
-<div class="toggle-switch" data-setting="reduced-motion"></div>
-</div>
-<div class="setting-item">
-<div class="setting-info">
-<h3>Font Size</h3>
-<p>Adjust text size for better readability</p>
-</div>
-<select id="font-size-select">
-<option value="small">Small</option>
-<option selected="" value="medium">Medium</option>
-<option value="large">Large</option>
-<option value="xlarge">Extra Large</option>
-</select>
-</div>
-</div><div class="settings-card reveal">
-<h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            Performance
-          </h2>
-<div class="setting-item">
-<div class="setting-info">
-<h3>High Performance Mode</h3>
-<p>Optimize for speed (reduces visual effects)</p>
-</div>
-<div class="toggle-switch" data-setting="performance"></div>
-</div>
-<div class="setting-item">
-<div class="setting-info">
-<h3>Preload Images</h3>
-<p>Load images in advance for faster browsing</p>
-</div>
-<div class="toggle-switch active" data-setting="preload"></div>
-</div>
-</div><div class="settings-card reveal">
-<h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">
-            About
-          </h2>
-<div style="padding: 1rem 0; color: var(--text-secondary); line-height: 1.8;">
-<p style="margin-bottom: 0.75rem;"><strong style="color: var(--text-primary);">Portfolio Version:</strong> 1.0.0</p>
-<p style="margin-bottom: 0.75rem;"><strong style="color: var(--text-primary);">Last Updated:</strong> September 2026</p>
-<p style="margin-bottom: 0.75rem;"><strong style="color: var(--text-primary);">Built With:</strong> HTML, CSS, JavaScript</p>
-<p style="margin-bottom: 1.5rem;"><strong style="color: var(--text-primary);">Browser:</strong> <span id="browser-info">Detecting...</span></p>
-<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-<button class="btn btn-secondary" id="reset-settings">
-                Reset to Defaults
-              </button>
-<button class="btn btn-ghost" id="export-settings">
-                Export Settings
-              </button>
-</div>
-</div>
 </div></section></main>
 <!-- Footer -->
 <footer>
@@ -649,7 +574,7 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=18"></script>
+<script src="./js/main.js?v=19"></script>
 </body>
 </html>
 
