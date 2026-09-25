@@ -41,11 +41,11 @@ function initCustomCursor() {
     p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
     p.style.left = mouseX + 'px';
     p.style.top = mouseY + 'px';
-    p.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+    p.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
     partContainer.appendChild(p);
     
     // Garbage collect particle after animation ends
-    setTimeout(() => { p.remove(); }, 800);
+    setTimeout(() => { p.remove(); }, 1500);
   }
   
   function renderCursor() {
@@ -53,7 +53,7 @@ function initCustomCursor() {
     
     // Spawn particle based on distance moved
     const dist = Math.hypot(mouseX - lastPartX, mouseY - lastPartY);
-    if(dist > 25) {
+    if(dist > 12) {
       spawnParticle();
       lastPartX = mouseX;
       lastPartY = mouseY;

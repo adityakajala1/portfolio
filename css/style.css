@@ -989,12 +989,12 @@ body { background: transparent !important; }
 }
 .data-particle {
   position: absolute;
-  font-size: 13px;
+  font-size: 20px;
   font-family: monospace;
   font-weight: bold;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: floatFade 0.8s ease-out forwards;
+  animation: floatFade 1.5s ease-out forwards;
 }
 
 /* Theme Adaptations */
@@ -1006,7 +1006,7 @@ body.blue-theme .data-particle { color: #0c4a6e; }
 
 @keyframes floatFade {
   0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% - 40px)) scale(0.5); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% - 80px)) scale(0.3); }
 }
 @media (max-width: 768px) {
   #cursor-data-dot, #particles-container { display: none !important; }
