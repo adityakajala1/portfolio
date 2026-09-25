@@ -32,6 +32,7 @@
 <style>
   /* NUKE EVERYTHING THAT COULD CAUSE A LINE */
   html, body {
+    cursor: none !important;
     min-height: 100vh;
     width: 100% !important;
     max-width: 100vw !important;
@@ -78,6 +79,9 @@
   }
   body:not(.dark-theme):not(.blue-theme) #global-bg {
     background: linear-gradient(180deg, #e8e8f0 0%, #c8dce8 100%) !important;
+  }
+  a, button, input, textarea, .card {
+    cursor: none !important;
   }
 </style>
 
@@ -679,7 +683,7 @@
 
   <!-- Premium Interactions (Tilt, Cursor, Neural Canvas, Boot) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="./js/premium.js?v=55"></script>
+  <script src="./js/premium.js?v=56"></script>
 
 </body>
 </html>
