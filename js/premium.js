@@ -135,7 +135,12 @@ function initMathEmbers() {
       if (this.y < -50) this.reset();
     }
     draw() {
-      ctx.fillStyle = 'rgba(56, 189, 248, ' + this.opacity + ')';
+      const isBlueTheme = document.body.classList.contains('blue-theme');
+      if (isBlueTheme) {
+        ctx.fillStyle = 'rgba(12, 74, 110, ' + (this.opacity + 0.2) + ')'; // Deep blue for better contrast
+      } else {
+        ctx.fillStyle = 'rgba(56, 189, 248, ' + this.opacity + ')'; // Bright cyan for dark theme
+      }
       ctx.font = this.size + 'px monospace';
       ctx.fillText(this.symbol, this.x, this.y);
     }

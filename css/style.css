@@ -951,9 +951,7 @@ footer {
 }
 
 /* Global Transparent Backgrounds for Math Canvas */
-body {
-  background-color: transparent !important;
-}
+
 .hero {
   background: transparent !important;
 }
