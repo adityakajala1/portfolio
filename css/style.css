@@ -961,3 +961,5 @@ footer {
 #about, #projects, #contact {
   background: transparent !important;
 }
+
+body { background: transparent !important; }
