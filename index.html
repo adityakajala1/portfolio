@@ -22,14 +22,15 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=21" rel="stylesheet"/>
-<link href="./css/animations.css?v=21" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=21" rel="stylesheet"/>
+<link href="./css/style.css?v=23" rel="stylesheet"/>
+<link href="./css/animations.css?v=23" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=23" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
 </head>
-<body>\n
+<body>
+
   <!-- Theme Toggle Lamp -->
   <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 4rem; right: 0; z-index: 1000; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: none; padding: 0;">
     <div style="position: relative;" class="lamp-container">
@@ -106,8 +107,9 @@
 <!-- Main Content -->
 <main><section class="hero" id="home">
 <div class="hero-content">
-<p class="hero-subtitle">Hello, I'm Aditya Kajala</p>
-<h1>Building the Future with <br/><span class="text-gradient">AI &amp; Machine Learning</span></h1>
+<p class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Hello, I'm</p>
+  <h1 style="font-size: clamp(3.5rem, 10vw, 7rem); margin-bottom: 0.5rem; line-height: 1.1; letter-spacing: -0.04em;"><span class="text-gradient" style="background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Aditya Kajala</span></h1>
+  <h2 style="font-size: clamp(1.25rem, 4vw, 2.5rem); font-weight: 500; margin-bottom: 2rem; color: var(--text-secondary);">Building the Future with AI &amp; Machine Learning</h2>
 <p class="hero-description">
           Second-year B.Tech CSE student specializing in AI &amp; ML, passionate about creating intelligent solutions and exploring the intersection of technology and innovation.
         </p>
@@ -116,7 +118,7 @@
 <a class="btn btn-secondary btn-magnetic" href="./contact.html">Get In Touch</a>
 </div>
 </div>
-</section><section id="about" style="padding-top: 8rem; padding-bottom: 4rem;"><div class="container section-header reveal text-center"><h2 class="section-title">About Me</h2></div><div class="container">
+</section><section id="about" style="padding-top: 4rem; padding-bottom: 4rem;"><div class="container section-header reveal text-center"><h2 class="section-title">About Me</h2></div><div class="container">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: start;">
 <div class="reveal-left">
 <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;  letter-spacing: -0.02em;">My Journey</h2>
@@ -301,7 +303,7 @@
             </p>
 </div>
 </div>
-</div></section><section id="projects" style="padding-top: 8rem; padding-bottom: 4rem;"><div class="container section-header reveal text-center"><h2 class="section-title">My Projects</h2></div><div class="container">
+</div></section><section id="projects" style="padding-top: 4rem; padding-bottom: 4rem;"><div class="container section-header reveal text-center"><h2 class="section-title">My Projects</h2></div><div class="container">
 <div class="filter-container reveal">
 <button class="filter-btn active" data-filter="all">All Projects</button>
 <button class="filter-btn" data-filter="ml">Machine Learning</button>
@@ -479,7 +481,7 @@
 </div>
 </div>
 </div>
-</div></section><section id="contact" style="padding-top: 8rem; padding-bottom: 4rem;"><div class="container section-header reveal text-center"><h2 class="section-title">Contact Me</h2></div><div class="container">
+</div></section><section id="contact" style="padding-top: 4rem; padding-bottom: 4rem;"><div class="container section-header reveal text-center"><h2 class="section-title">Contact Me</h2></div><div class="container">
 <div class="grid grid-3">
 <a class="contact-info-card reveal-stagger" href="mailto:adityakajala06@gmail.com">
 <div class="contact-icon">
@@ -623,9 +625,10 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=21"></script>
+<script src="./js/main.js?v=23"></script>
 </body>
 </html>
+
 
 
 
