@@ -22,9 +22,9 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=24" rel="stylesheet"/>
-<link href="./css/animations.css?v=24" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=24" rel="stylesheet"/>
+<link href="./css/style.css?v=26" rel="stylesheet"/>
+<link href="./css/animations.css?v=26" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=26" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
@@ -87,7 +87,7 @@
       <div class="lamp-glow" style="position: absolute; top: 65%; right: 50%; transform: translateX(50%); width: 14px; height: 14px; background: rgba(251, 191, 36, 0.4); border-radius: 50%; filter: blur(6px); pointer-events: none; transition: background 0.5s;"></div>
     </div>
   </button>
-\n
+
   
 
 
@@ -107,9 +107,18 @@
 <!-- Main Content -->
 <main><section class="hero" id="home">
 <div class="hero-content">
-<p class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Hello, I'm</p>
-  <h1 style="font-size: clamp(3.5rem, 10vw, 7rem); margin-bottom: 0.5rem; line-height: 1.1; letter-spacing: -0.04em;"><span class="text-gradient" style="background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Aditya Kajala</span></h1>
-  <h2 style="font-size: clamp(1.25rem, 4vw, 2.5rem); font-weight: 500; margin-bottom: 2rem; color: var(--text-secondary);">Building the Future with AI &amp; Machine Learning</h2>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem;">
+    <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: 100px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); margin-bottom: 2rem; animation: fadeInUp 0.8s ease forwards;">
+      <span style="display: block; width: 8px; height: 8px; background: #3b82f6; border-radius: 50%; box-shadow: 0 0 10px #3b82f6;"></span>
+      <span style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #3b82f6;">Hello, I'm</span>
+    </div>
+    <h1 style="font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; line-height: 1; letter-spacing: -0.05em; text-align: center; margin: 0; color: var(--text-primary); animation: fadeInUp 0.8s ease 0.1s forwards;">
+      Aditya Kajala
+    </h1>
+    <h2 style="font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 400; color: var(--text-secondary); text-align: center; max-width: 600px; margin-top: 1.5rem; line-height: 1.5; animation: fadeInUp 0.8s ease 0.2s forwards;">
+      Building the future with <span style="color: var(--accent-blue); font-weight: 600;">AI &amp; Machine Learning</span>
+    </h2>
+  </div>
 <p class="hero-description">
           Second-year B.Tech CSE student specializing in AI &amp; ML, passionate about creating intelligent solutions and exploring the intersection of technology and innovation.
         </p>
@@ -625,7 +634,7 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=24"></script>
+<script src="./js/main.js?v=26"></script>
 </body>
 </html>
 
