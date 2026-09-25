@@ -846,3 +846,24 @@ footer {
 }
 
 
+
+/* Tech Stack Tags */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.tech-tag {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(2, 132, 199, 0.15);
+  color: #0284c7;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.dark-theme .tech-tag {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
