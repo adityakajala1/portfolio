@@ -158,7 +158,6 @@ body.blue-theme,
 .blue-theme .card,
 .blue-theme footer,
 .blue-theme .hero,
-.blue-theme section,
 .blue-theme .form-input,
 .blue-theme .form-textarea,
 .blue-theme .btn-ghost,
@@ -266,4 +265,8 @@ body:not(.dark-theme):not(.blue-theme) .nav-links a.active { color: #000000 !imp
 
 .hero::before, .hero::after, .dark-theme .hero::before, .dark-theme .hero::after, .blue-theme .hero::before, .blue-theme .hero::after {
   display: none !important;
+}
+
+.blue-theme section, .blue-theme main, .blue-theme #about, .blue-theme #projects, .blue-theme #contact {
+    background: transparent !important;
 }
