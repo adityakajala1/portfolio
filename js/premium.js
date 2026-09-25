@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initMathEmbers();
   initCustomCursor();
   initScrollProgress();
   init3DTilt();
@@ -88,3 +89,68 @@ function init3DTilt() {
   });
 }
 
+
+
+// 6. Global Math Embers Canvas
+function initMathEmbers() {
+  const mCanvas = document.getElementById('math-canvas');
+  if (!mCanvas) return;
+  const ctx = mCanvas.getContext('2d');
+  
+  let width, height;
+  function resizeCanvas() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    
+    mCanvas.width = width * dpr;
+    mCanvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+    mCanvas.style.width = width + 'px';
+    mCanvas.style.height = height + 'px';
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  const symbols = ['∑', 'λ', '∇', '∫', '∆', 'π', 'θ', 'f(x)'];
+  let particles = [];
+  
+  class MathParticle {
+    constructor() {
+      this.reset();
+      this.y = Math.random() * height;
+    }
+    reset() {
+      this.x = Math.random() * width;
+      this.y = height + 50;
+      this.speed = Math.random() * 0.8 + 0.2;
+      this.symbol = symbols[Math.floor(Math.random() * symbols.length)];
+      this.opacity = Math.random() * 0.5 + 0.1;
+      this.size = Math.random() * 10 + 10;
+      this.drift = (Math.random() - 0.5) * 0.5;
+    }
+    update() {
+      this.y -= this.speed;
+      this.x += this.drift;
+      if (this.y < -50) this.reset();
+    }
+    draw() {
+      ctx.fillStyle = 'rgba(56, 189, 248, ' + this.opacity + ')';
+      ctx.font = this.size + 'px monospace';
+      ctx.fillText(this.symbol, this.x, this.y);
+    }
+  }
+  
+  // Create more particles since it covers the whole screen
+  for(let i = 0; i < 80; i++) particles.push(new MathParticle());
+  
+  function animateMath() {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animateMath);
+  }
+  animateMath();
+}

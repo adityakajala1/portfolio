@@ -949,3 +949,17 @@ footer {
   50% { left: 200%; }
   100% { left: 200%; }
 }
+
+/* Global Transparent Backgrounds for Math Canvas */
+body {
+  background-color: transparent !important;
+}
+.hero {
+  background: transparent !important;
+}
+footer {
+  background: transparent !important;
+}
+#about, #projects, #contact {
+  background: transparent !important;
+}
