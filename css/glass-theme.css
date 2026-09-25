@@ -33,7 +33,7 @@ body.dark-theme,
 /* ----- GLASS SURFACE (works in both modes) ----- */
 .glass,
 .glass nav, .glass .card, .glass footer, .glass .hero,
-.glass section, .glass .form-input, .glass .form-textarea,
+.glass .form-input, .glass .form-textarea,
 .glass .btn-primary, .glass .btn-secondary, .glass .btn-ghost,
 .glass .social-links a, .glass .section-tag,
 .glass .menu-toggle, .glass .nav-links,
@@ -268,5 +268,14 @@ body:not(.dark-theme):not(.blue-theme) .nav-links a.active { color: #000000 !imp
 }
 
 .blue-theme section, .blue-theme main, .blue-theme #about, .blue-theme #projects, .blue-theme #contact {
+    background: transparent !important;
+}
+
+/* FORCE REMOVE GLASS FROM SECTIONS (LAYOUT WRAPPERS SHOULD NEVER BE GLASS CARDS) */
+body section, body main, body .hero, body #about, body #projects, body #contact {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
     background: transparent !important;
 }
