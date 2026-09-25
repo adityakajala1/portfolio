@@ -942,3 +942,10 @@ footer {
     cursor: none !important;
   }
 }
+
+/* Vercel Grid Light Sweep Animation */
+@keyframes sweep {
+  0% { left: -100%; }
+  50% { left: 200%; }
+  100% { left: 200%; }
+}
