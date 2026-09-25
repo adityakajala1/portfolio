@@ -4,49 +4,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initBootSequence();
   initCustomCursor();
   initScrollProgress();
   init3DTilt();
   initNeuralCanvas();
 });
 
-// 1. Terminal Boot Sequence
-function initBootSequence() {
-  const bootScreen = document.getElementById('boot-sequence');
-  const bootText = document.getElementById('boot-text');
-  
-  if (!bootScreen || !bootText) return;
-
-  const lines = [
-    '> Initializing neural pathways...',
-    '> Loading pre-trained weights...',
-    '> Establishing connection...',
-    '> Access granted. Welcome, Aditya.'
-  ];
-  
-  let lineIndex = 0;
-  
-  function typeLine() {
-    if (lineIndex < lines.length) {
-      const p = document.createElement('p');
-      p.style.margin = '0.5rem 0';
-      p.textContent = lines[lineIndex];
-      bootText.appendChild(p);
-      lineIndex++;
-      setTimeout(typeLine, 300);
-    } else {
-      setTimeout(() => {
-        bootScreen.style.opacity = '0';
-        setTimeout(() => {
-          bootScreen.style.display = 'none';
-        }, 500);
-      }, 400);
-    }
-  }
-  
-  setTimeout(typeLine, 200);
-}
 
 // 2. Custom Premium Cursor
 function initCustomCursor() {
