@@ -1,4 +1,5 @@
-﻿/**
+
+/**
  * Premium Interactions for Aditya Kajala Portfolio
  */
 
@@ -17,9 +18,6 @@ function initBootSequence() {
   
   if (!bootScreen || !bootText) return;
 
-  // Check if we've already booted in this session to avoid annoyance on refresh
-  // Actually, let's play it every time for the demo, but keep it FAST.
-  
   const lines = [
     '> Initializing neural pathways...',
     '> Loading pre-trained weights...',
@@ -73,20 +71,17 @@ function initCustomCursor() {
     mouseX = e.clientX;
     mouseY = e.clientY;
     
-    // Dot follows instantly
-    dot.style.transform = 	ranslate(calc(\px - 50%), calc(\px - 50%));
+    dot.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%));
   });
   
-  // Smooth follow for the ring
   function renderCursor() {
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
-    ring.style.transform = 	ranslate(calc(\px - 50%), calc(\px - 50%));
+    ring.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%));
     requestAnimationFrame(renderCursor);
   }
   requestAnimationFrame(renderCursor);
   
-  // Hover states
   const hoverTargets = document.querySelectorAll('a, button, .card, .btn');
   hoverTargets.forEach(target => {
     target.addEventListener('mouseenter', () => {
@@ -94,14 +89,14 @@ function initCustomCursor() {
       ring.style.height = '50px';
       ring.style.background = 'rgba(59, 130, 246, 0.1)';
       ring.style.borderColor = 'rgba(59, 130, 246, 0.8)';
-      dot.style.transform = 	ranslate(calc(\px - 50%), calc(\px - 50%)) scale(1.5);
+      dot.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%)) scale(1.5);
     });
     target.addEventListener('mouseleave', () => {
       ring.style.width = '36px';
       ring.style.height = '36px';
       ring.style.background = 'transparent';
       ring.style.borderColor = 'rgba(59, 130, 246, 0.5)';
-      dot.style.transform = 	ranslate(calc(\px - 50%), calc(\px - 50%)) scale(1);
+      dot.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%)) scale(1);
     });
   });
 }
@@ -155,7 +150,6 @@ function initNeuralCanvas() {
   window.addEventListener('resize', resize);
   resize();
   
-  // Track mouse over hero section specifically to avoid global coordinates offset
   const hero = document.getElementById('home');
   hero.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -206,7 +200,6 @@ function initNeuralCanvas() {
     });
     
     for (let i = 0; i < nodes.length; i++) {
-      // Connect nodes to each other
       for (let j = i + 1; j < nodes.length; j++) {
         const dx = nodes[i].x - nodes[j].x;
         const dy = nodes[i].y - nodes[j].y;
@@ -217,13 +210,12 @@ function initNeuralCanvas() {
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
           const opacity = 1 - (dist / connectionDistance);
-          ctx.strokeStyle = gba(59, 130, 246, \);
+          ctx.strokeStyle = f'rgba(59, 130, 246, {opacity * 0.2})';
           ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
       
-      // Connect nodes to mouse
       const mdx = nodes[i].x - mouse.x;
       const mdy = nodes[i].y - mouse.y;
       const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -233,7 +225,7 @@ function initNeuralCanvas() {
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(mouse.x, mouse.y);
         const opacity = 1 - (mdist / (connectionDistance * 1.5));
-        ctx.strokeStyle = gba(96, 165, 250, \);
+        ctx.strokeStyle = f'rgba(96, 165, 250, {opacity * 0.4})';
         ctx.lineWidth = 1.5;
         ctx.stroke();
       }
