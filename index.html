@@ -22,12 +22,62 @@
 <!-- Favicon -->
 <link href="./assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Stylesheets -->
-<link href="./css/style.css?v=45" rel="stylesheet"/>
-<link href="./css/animations.css?v=45" rel="stylesheet"/>
-<link href="./css/glass-theme.css?v=45" rel="stylesheet"/>
+<link href="./css/style.css?v=46" rel="stylesheet"/>
+<link href="./css/animations.css?v=46" rel="stylesheet"/>
+<link href="./css/glass-theme.css?v=46" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
 <link as="script" href="./js/main.js" rel="preload"/>
+
+<style>
+  /* NUKE EVERYTHING THAT COULD CAUSE A LINE */
+  html, body {
+    min-height: 100vh;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+  
+  /* Make every single layout element completely transparent */
+  main, section, header, footer, .hero, #about, #projects, #contact {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Also hide any possible pseudo elements on layout wrappers */
+  .hero::before, .hero::after, section::before, section::after {
+    display: none !important;
+    opacity: 0 !important;
+  }
+
+  /* Force global bg to be exactly the screen size and use a linear gradient to prevent any radial radius clipping bugs */
+  #global-bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -9999 !important;
+    background: transparent !important;
+  }
+  
+  /* Apply safe linear gradients */
+  body.dark-theme #global-bg {
+    background: linear-gradient(180deg, #0f0f16 0%, #161622 100%) !important;
+  }
+  body.blue-theme #global-bg {
+    background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 50%, #38bdf8 100%) !important;
+  }
+  body:not(.dark-theme):not(.blue-theme) #global-bg {
+    background: linear-gradient(180deg, #e8e8f0 0%, #c8dce8 100%) !important;
+  }
+</style>
+
 </head>
 <body>
 
@@ -622,11 +672,11 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=45"></script>
+<script src="./js/main.js?v=46"></script>
 
   <!-- Premium Interactions (Tilt, Cursor, Neural Canvas, Boot) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="./js/premium.js?v=45"></script>
+  <script src="./js/premium.js?v=46"></script>
 
 </body>
 </html>
