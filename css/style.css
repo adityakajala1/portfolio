@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    APPLE-STYLE PREMIUM PORTFOLIO - ADITYA KAJALA
    Design System & Global Styles - DARK THEME
    ============================================ */
@@ -936,13 +936,6 @@ footer {
   box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
 }
 
-/* Premium Cursor Overrides */
-@media (pointer: fine) {
-  body, a, button, input, textarea, .card, .btn, select, span {
-    cursor: none !important;
-  }
-}
-
 /* Vercel Grid Light Sweep Animation */
 @keyframes sweep {
   0% { left: -100%; }
@@ -963,29 +956,3 @@ footer {
 }
 
 body { background: transparent !important; }
-
-
-/* Theme Adaptations */
-body:not(.blue-theme) #cursor-data-dot { background: #38bdf8; }
-body:not(.blue-theme) .data-particle { color: #38bdf8; }
-
-body.blue-theme #cursor-data-dot { background: #0c4a6e; }
-body.blue-theme .data-particle { color: #0c4a6e; }
-
-@keyframes floatFade {
-  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0; transform: translate(-50%, calc(-50% - 80px)) scale(0.3); }
-}
-@media (max-width: 768px) {
-  #cursor-data-dot, #particles-container { display: none !important; }
-}
-#cursor-inverter.hovering {
-  width: 80px;
-  height: 80px;
-}
-@media (max-width: 768px) {
-  #cursor-inverter { display: none; }
-}
-
-
-
