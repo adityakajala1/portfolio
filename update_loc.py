@@ -1,4 +1,4 @@
-﻿import os
+import os
 import re
 
 projects = [
@@ -47,7 +47,7 @@ with open(index_path, 'r', encoding='utf-8') as f:
 
 # Replace any existing LOC counter inside the stats section
 # Pattern matches either +110k, 110k+, 50k+, or any previous exact number before "Lines of Code"
-loc_str = f"+{loc:,}" # e.g. +115,922
+loc_str = f"{loc:,}+" # e.g. 115,893+
 
 html = re.sub(
     r'(<div style="font-size: 2\.5rem; font-weight: 700; margin-bottom: 0\.25rem;">)[^<]+(</div>\s*<div style="opacity: 0\.9; font-size: 0\.95rem;">Lines of Code</div>)',

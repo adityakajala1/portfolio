@@ -11,5 +11,5 @@ Always execute:
 ```bash
 python update_loc.py
 ```
-This script dynamically computes the exact total lines of code across all active project repositories and updates `index.html` with the formatted number (`+XX,XXX`).
+This script dynamically computes the exact total lines of code across all active project repositories and updates `index.html` with the formatted number (`XX,XXX+`).
 Then, ensure the updated `index.html` is committed and pushed so the user's live portfolio always reflects their true work.
