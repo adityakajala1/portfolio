@@ -108,59 +108,59 @@
 
 
   <!-- Theme Toggle Lamp -->
-  <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 1.5rem; right: 1rem; z-index: 1000; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; outline: none; padding: 0;">
+  <button id="theme-lamp" aria-label="Toggle Theme" style="position: fixed; top: 0; right: 0; z-index: 1000; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; outline: none; padding: 0; transform-origin: top right;">
     <div style="position: relative;" class="lamp-container">
       <svg 
-        width="38" 
-        height="54" 
+        width="48" 
+        height="68" 
         viewBox="0 0 140 200" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
-        style="transform-origin: center; transition: transform 0.3s;"
-        onmouseover="this.style.transform='scale(1.1)'"
+        style="transform-origin: top right; transition: transform 0.3s;"
+        onmouseover="this.style.transform='scale(1.08)'"
         onmouseout="this.style.transform='scale(1)'"
         onmousedown="this.style.transform='scale(0.95)'"
-        onmouseup="this.style.transform='scale(1.1)'"
+        onmouseup="this.style.transform='scale(1.08)'"
       >
-        <!-- Wall Mount Plate -->
-        <rect x="130" y="10" width="10" height="120" rx="2" fill="currentColor" style="color: var(--text-primary); opacity: 0.25;" />
+        <!-- Wall Mount Plate (Flush against the top-right corner) -->
+        <rect x="132" y="0" width="8" height="140" rx="1" fill="currentColor" style="color: var(--text-primary); opacity: 0.75;" />
         
         <!-- Main Ornate Bracket -->
         <path 
-          d="M 130 25 C 70 25, 50 60, 50 100 C 50 120, 80 130, 100 110 C 110 100, 105 85, 95 85" 
+          d="M 132 15 C 65 15, 48 55, 48 100 C 48 120, 80 130, 100 110 C 110 100, 105 85, 95 85" 
           stroke="currentColor" 
-          stroke-width="6" 
+          stroke-width="7" 
           stroke-linecap="round" 
           fill="none"
-          style="color: var(--text-primary); opacity: 0.25;"
+          style="color: var(--text-primary); opacity: 0.75;"
         />
         <!-- Secondary Bracket Swirl -->
         <path 
-          d="M 130 80 C 100 80, 90 100, 100 120 C 110 130, 125 125, 125 110" 
+          d="M 132 75 C 98 75, 88 95, 98 118 C 108 128, 126 122, 128 108" 
           stroke="currentColor" 
-          stroke-width="3" 
+          stroke-width="3.5" 
           stroke-linecap="round" 
           fill="none"
-          style="color: var(--text-primary); opacity: 0.25;"
+          style="color: var(--text-primary); opacity: 0.6;"
         />
         
         <!-- Lamp Connector -->
-        <line x1="50" y1="100" x2="50" y2="115" stroke="currentColor" stroke-width="4" style="color: var(--text-primary); opacity: 0.25;" />
+        <line x1="48" y1="100" x2="48" y2="115" stroke="currentColor" stroke-width="4.5" style="color: var(--text-primary); opacity: 0.75;" />
         
         <!-- Lantern Cap -->
-        <path d="M 25 130 L 75 130 L 60 115 L 40 115 Z" fill="currentColor" style="color: var(--text-primary); opacity: 0.8;" />
-        <path d="M 20 135 L 80 135 L 75 130 L 25 130 Z" fill="currentColor" style="color: var(--text-primary);" />
+        <path d="M 23 130 L 73 130 L 58 115 L 38 115 Z" fill="currentColor" style="color: var(--text-primary); opacity: 0.9;" />
+        <path d="M 18 135 L 78 135 L 73 130 L 23 130 Z" fill="currentColor" style="color: var(--text-primary);" />
         
         <!-- Lantern Glass Body -->
-        <path d="M 25 135 L 75 135 L 65 180 L 35 180 Z" fill="currentColor" style="color: var(--text-primary); opacity: 0.1;" />
+        <path d="M 23 135 L 73 135 L 63 180 L 33 180 Z" fill="currentColor" style="color: var(--text-primary); opacity: 0.15;" />
         <!-- Glass Panes / Frame -->
-        <path d="M 32 135 L 42 180 M 68 135 L 58 180" stroke="currentColor" stroke-width="2" style="color: var(--text-primary); opacity: 0.4;" />
+        <path d="M 30 135 L 40 180 M 66 135 L 56 180" stroke="currentColor" stroke-width="2" style="color: var(--text-primary); opacity: 0.5;" />
         
         <!-- Lantern Bottom -->
-        <path d="M 35 180 L 65 180 L 60 190 L 40 190 Z" fill="currentColor" style="color: var(--text-primary); opacity: 0.8;" />
-        <circle cx="50" cy="195" r="4" fill="currentColor" style="color: var(--text-primary);" />
+        <path d="M 33 180 L 63 180 L 58 190 L 38 190 Z" fill="currentColor" style="color: var(--text-primary); opacity: 0.9;" />
+        <circle cx="48" cy="195" r="4" fill="currentColor" style="color: var(--text-primary);" />
       </svg>
-      <div class="lamp-glow" style="position: absolute; top: 65%; right: 50%; transform: translateX(50%); width: 14px; height: 14px; background: rgba(251, 191, 36, 0.4); border-radius: 50%; filter: blur(6px); pointer-events: none; transition: background 0.5s;"></div>
+      <div class="lamp-glow" style="position: absolute; top: 62%; right: 58%; transform: translateX(50%); width: 18px; height: 18px; background: rgba(251, 191, 36, 0.45); border-radius: 50%; filter: blur(7px); pointer-events: none; transition: background 0.5s;"></div>
     </div>
   </button>
 
