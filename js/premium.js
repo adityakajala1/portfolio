@@ -5,64 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMathEmbers();
-  initCustomCursor();
   initScrollProgress();
-  init3DTilt();
 });
 
-
-// 2. Custom Premium Cursor
-function initCustomCursor() {
-  const dataDot = document.getElementById('cursor-data-dot');
-  const partContainer = document.getElementById('particles-container');
-  
-  if (!dataDot || !partContainer) return;
-  
-  if (window.matchMedia('(pointer: coarse)').matches) {
-    dataDot.style.display = 'none';
-    partContainer.style.display = 'none';
-    return;
-  }
-  document.body.classList.add('custom-cursor-active');
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let lastPartX = mouseX;
-  let lastPartY = mouseY;
-  const symbols = ['∑', '∆', 'π', 'θ', 'λ', '0', '1', 'f(x)', 'μ', 'σ', '{ }', '< >', '!='];
-  
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function spawnParticle() {
-    const p = document.createElement('div');
-    p.className = 'data-particle';
-    p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-    p.style.left = (mouseX + (Math.random() * 80 - 40)) + 'px';
-    p.style.top = mouseY + 'px';
-    
-    partContainer.appendChild(p);
-    
-    // Garbage collect particle after animation ends
-    setTimeout(() => { p.remove(); }, 1500);
-  }
-  
-  function renderCursor() {
-    dataDot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
-    
-    // Spawn particle based on distance moved
-    const dist = Math.hypot(mouseX - lastPartX, mouseY - lastPartY);
-    if(dist > 12) {
-      spawnParticle();
-      lastPartX = mouseX;
-      lastPartY = mouseY;
-    }
-    requestAnimationFrame(renderCursor);
-  }
-  requestAnimationFrame(renderCursor);
-}
 
 function initScrollProgress() {
   const progressBar = document.getElementById('scroll-progress');
@@ -75,21 +20,6 @@ function initScrollProgress() {
     progressBar.style.width = scrollPercent + '%';
   });
 }
-
-// 4. 3D Tilt
-function init3DTilt() {
-  if (typeof VanillaTilt === 'undefined') return;
-  
-  VanillaTilt.init(document.querySelectorAll('.project-card, .contact-hover-card'), {
-    max: 5,
-    speed: 400,
-    glare: true,
-    'max-glare': 0.15,
-    scale: 1.02
-  });
-}
-
-
 
 // 6. Global Math Embers Canvas
 function initMathEmbers() {

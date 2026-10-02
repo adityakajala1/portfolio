@@ -964,38 +964,6 @@ footer {
 
 body { background: transparent !important; }
 
-/* ============================================
-   DATA EMITTER CURSOR
-============================================ */
-#cursor-data-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 99999;
-}
-#particles-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 99998;
-}
-.data-particle {
-  position: absolute;
-  font-size: 20px;
-  font-family: monospace;
-  font-weight: bold;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: floatFade 1.5s ease-out forwards;
-}
 
 /* Theme Adaptations */
 body:not(.blue-theme) #cursor-data-dot { background: #38bdf8; }
@@ -1020,7 +988,4 @@ body.blue-theme .data-particle { color: #0c4a6e; }
 }
 
 
-/* Safely hide default cursor only when custom cursor is active */
-body.custom-cursor-active, body.custom-cursor-active * {
-  cursor: none !important;
-}
+
