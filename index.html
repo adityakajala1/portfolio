@@ -37,7 +37,7 @@
 <link href="./css/glass-theme.css?v=51" rel="stylesheet"/>
 <!-- Preload critical resources -->
 <link as="style" href="./css/style.css" rel="preload"/>
-<link as="script" href="./js/main.js?v=6" rel="preload"/>
+<link as="script" href="./js/main.js?v=7" rel="preload"/>
 
 <style>
   /* NUKE EVERYTHING THAT COULD CAUSE A LINE */
@@ -231,11 +231,11 @@
 <div style="opacity: 0.9; font-size: 0.95rem;">Year Student</div>
 </div>
 <div>
-<div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem;">4</div>
+<div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem;">5</div>
 <div style="opacity: 0.9; font-size: 0.95rem;">Projects Completed</div>
 </div>
 <div>
-<div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem;">116,931+</div>
+<div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem;">136,414+</div>
   <div style="opacity: 0.9; font-size: 0.95rem;">Lines of Code</div>
 </div>
 </div>
@@ -402,27 +402,66 @@
 </div><div class="container">
 <div class="grid grid-2">
 
-  <!-- Project 0: Mark Mint -->
-  <div class="card project-card card-shine reveal-stagger" data-category="web">
-  <div class="card-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></div>
-  <h3 class="card-title">Mark Mint</h3>
-  <p class="card-description">
-                A modern web platform designed for content creation and digital asset management. Features an intuitive editor, seamless previews, and a beautifully crafted user interface.
-              </p>
-  <div class="tech-stack">
-  <span class="tech-tag">React</span>
-  <span class="tech-tag">Node.js</span>
-  <span class="tech-tag">Web3</span>
-  <span class="tech-tag">Tailwind</span>
+  <!-- Project: MarkMint (Flagship Founder Project) -->
+  <div class="card project-card card-shine reveal-stagger" data-category="ml web">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+      <div class="card-icon" style="margin-bottom: 0;">
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+      </div>
+      <span style="font-size: 0.75rem; font-weight: 600; color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.25rem 0.65rem; border-radius: 9999px;">Founder Project</span>
+    </div>
+    <h3 class="card-title">MarkMint</h3>
+    <p class="card-description">
+      Deterministic exam-intelligence and academic forecast platform built for university students. Features automated syllabus extraction, historical ExamDNA predictive models, interactive semester dashboards, and high-confidence forecast analytics.
+    </p>
+    <div class="tech-stack">
+      <span class="tech-tag">Next.js 16</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Tailwind</span>
+      <span class="tech-tag">PyMuPDF</span>
+      <span class="tech-tag">PostgreSQL</span>
+    </div>
+    <div class="project-links">
+      <a class="btn btn-ghost" href="https://github.com/adityakajala1/markmint" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-secondary" href="https://markmint.vercel.app" target="_blank" rel="noopener noreferrer">
+        Live Demo
+      </a>
+    </div>
   </div>
-  <div class="project-links">
-    <a class="btn btn-ghost" href="https://github.com/adityakajala1/Mark-Mint" target="_blank" rel="noopener noreferrer">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-      GitHub
-    </a>
-    <a class="btn btn-secondary" href="https://adityakajala1.github.io/Mark-Mint" target="_blank" rel="noopener noreferrer">
-      Live Demo
-    </a>
+
+  <!-- Project: SLATE (Offline Android Workspace) -->
+  <div class="card project-card card-shine reveal-stagger" data-category="software">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+      <div class="card-icon" style="margin-bottom: 0;">
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><rect height="18" rx="2" ry="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="7" y2="7"></line><line x1="9" x2="15" y1="11" y2="11"></line><line x1="9" x2="13" y1="15" y2="15"></line></svg>
+      </div>
+      <span style="font-size: 0.75rem; font-weight: 600; color: #4ade80; background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.3); padding: 0.25rem 0.65rem; border-radius: 9999px;">Android App • v1.1.2</span>
+    </div>
+    <h3 class="card-title">SLATE</h3>
+    <p class="card-description">
+      Fast, lightweight, 100% ad-free, offline-first Android document workspace built with Kotlin and Jetpack Compose. Unified viewer, rich editor, scanner, and converter for PDFs, Word docs, Spreadsheets, and Presentations with zero internet permissions.
+    </p>
+    <div class="tech-stack">
+      <span class="tech-tag">Kotlin</span>
+      <span class="tech-tag">Jetpack Compose</span>
+      <span class="tech-tag">Material 3</span>
+      <span class="tech-tag">Room DB</span>
+      <span class="tech-tag">PDFBox</span>
+      <span class="tech-tag">ML Kit</span>
+    </div>
+    <div class="project-links">
+      <a class="btn btn-ghost" href="https://github.com/adityakajala1/SLATE" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/adityakajala1/SLATE" target="_blank" rel="noopener noreferrer">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="margin-right: 6px;" viewbox="0 0 24 24" width="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+        View App
+      </a>
     </div>
   </div>
 
@@ -688,7 +727,7 @@
 </div>
 </footer>
 <!-- JavaScript -->
-<script src="./js/main.js?v=6"></script>
+<script src="./js/main.js?v=7"></script>
 
   <!-- Premium Interactions (Tilt, Cursor, Neural Canvas, Boot) -->
   <script src="./js/premium.js?v=101"></script>

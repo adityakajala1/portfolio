@@ -12,6 +12,7 @@ if sys.stderr is None:
 
 PROJECTS = [
     r"C:\Users\adity\Documents\sys\examscope",
+    r"C:\Users\adity\Desktop\MastKaam\SLATE",
     r"C:\Users\adity\Desktop\portfolio",
     r"C:\Users\adity\Desktop\Sarthak",
     r"C:\Users\adity\Desktop\hostel-wallet",
@@ -21,7 +22,7 @@ PROJECTS = [
 
 CODE_EXTENSIONS = {
     '.py', '.ts', '.tsx', '.js', '.jsx', '.html', '.css', '.scss', 
-    '.cpp', '.c', '.h', '.hpp', '.java', '.sql', '.sh', '.bat', '.ini', '.mako'
+    '.cpp', '.c', '.h', '.hpp', '.java', '.kt', '.kts', '.xml', '.sql', '.sh', '.bat', '.ini', '.mako'
 }
 
 INDEX_PATH = r"C:\Users\adity\Desktop\portfolio\index.html"
@@ -43,7 +44,8 @@ def count_all_loc():
         for root, dirs, files in os.walk(root_dir):
             if any(ignored in root.lower() for ignored in [
                 'node_modules', '.next', '.git', 'venv', '.pytest_cache', 
-                '__pycache__', '.claude', 'dist', 'build', '.impeccable', 'coverage'
+                '__pycache__', '.claude', 'dist', 'build', '.impeccable', 'coverage',
+                '.gradle', '.kotlin'
             ]):
                 continue
             for file in files:

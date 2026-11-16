@@ -4,7 +4,7 @@
 The user requires the exact count of lines of code to be displayed on their live portfolio website (`index.html` under "Quick Facts").
 
 Whenever any prompt involves:
-- Writing, modifying, adding, or deleting code in this portfolio or any related project (`MarkMint`, `Sarthak`, `Hostel Wallet`, `Lamp`, `ExamDNA`)
+- Writing, modifying, adding, or deleting code in this portfolio or any related project (`MarkMint`, `SLATE`, `Sarthak`, `Hostel Wallet`, `Lamp`, `ExamDNA`)
 - Adding or removing features
 
 Always execute:
